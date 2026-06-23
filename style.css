@@ -26,6 +26,11 @@ html, body {
     scroll-behavior: auto !important; 
 }
 
+/* Ensure the first section doesn't hide behind the fixed nav */
+#home {
+    padding-top: 100px; /* Adjust this value to match your nav height */
+}
+
 .grain {
     position: fixed;
     inset: 0;
@@ -127,6 +132,12 @@ html, body {
     transition: transform 0.3s ease;
 }
 .nav-cta:hover { transform: scale(1.03); }
+
+#nav {
+    backdrop-filter: blur(10px); /* Blurs the content scrolling behind */
+    background-color: rgba(11, 15, 25, 0.8); /* Slight transparency */
+    transition: all 0.3s ease;
+}
 
 /* HERO DISPLAY SPECIFICATIONS */
 .hero {
