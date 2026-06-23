@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyrus Wong | Professional Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+</head>
+<body class="text-[#cbd5e1] antialiased">
+
+    <div class="grain"></div>
+
+    <div id="lightbox" onclick="closeLightboxFunc()" class="fixed inset-0 z-[100] hidden bg-[#0b0f19]/95 backdrop-blur-md flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 cursor-pointer">
+        <button id="closeLightbox" onclick="closeLightboxFunc()" class="absolute top-6 right-8 text-white text-5xl font-light hover:text-[#00F5A0] transition-colors focus:outline-none">&times;</button>
+        <img id="lightboxImg" src="" class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl border border-[#00F5A0]/20 transform scale-95 transition-transform duration-300">
+    </div>
+
+    <nav class="nav" id="nav">
+        <div class="logo font-bold text-xl tracking-wider text-[#00F5A0]">
+            CYRUS<span class="text-slate-500">.W</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#certificate">Certificate</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact-footer">Contact</a></li>
+        </ul>
+        <button class="nav-cta" id="navContactBtn" onclick="gsap.to(window, {duration: 1, scrollTo: '#contact'})">
+            Get In Touch
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+            </svg>
+        </button>
+    </nav>
+
+    <header class="hero relative" id="home">
+        <div class="bg-text-wrap">
+            <div class="bg-text">
+                NOTHING IS IMPOSSIBLE &nbsp; NOTHING IS IMPOSSIBLE &nbsp; NOTHING IS IMPOSSIBLE &nbsp; ;
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 px-4">
+            <div class="lg:col-span-7 text-left space-y-6">
+                <div class="eyebrow text-[#00F5A0]">All About Me</div>
+                <h1 class="text-5xl lg:text-7xl font-bold tracking-tight text-white leading-tight font-['Space_Grotesk']">
+                    Unlocking<br><span class="text-[#00F5A0]">Insights</span> Through Data
+                </h1>
+                <p class="text-slate-400 max-w-xl text-lg">
+                    A secondary school science student and programmer specializing in data science, predictive analytics, and automated data architectures to solve complex analytical problems.
+                </p>
+            </div>
+            
+            <div class="lg:col-span-5 flex justify-center lg:justify-end overflow-visible">
+                <div id="flyInPortrait" class="profile-image-wrapper">
+                    <img src="me.png" alt="Cyrus Wong" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="split-section" id="about">
+        <div class="max-w-6xl mx-auto w-full gs-reveal">
+            <div class="text-left mb-6">
+                <h2 class="text-3xl font-bold tracking-tight text-white border-b-2 border-[#00F5A0] inline-block pb-1 font-['Space_Grotesk']">About Me</h2>
+            </div>
+            
+            <div class="glass-card w-full p-8 space-y-6 rounded-2xl shadow-2xl border border-emerald-500/10">
+                <h3 class="text-xl font-bold text-white tracking-wide uppercase border-b border-emerald-500/10 pb-3 font-['Space_Grotesk']">INFORMATION</h3>
+                
+                <div class="space-y-2 text-base">
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
+                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-user w-5"></i> Name:</span>
+                        <span class="sm:col-span-3 text-slate-300 row-text">Cyrus Wong (Wong Wai Kuan)</span>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
+                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-calendar w-5"></i> Date of birth:</span>
+                        <span class="sm:col-span-3 text-slate-300 row-text">2009.06.06</span>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
+                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-star w-5"></i> Zodiac Sign:</span>
+                        <span class="sm:col-span-3 text-slate-300 row-text">Gemini</span>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
+                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-location-dot w-5"></i> Location:</span>
+                        <span class="sm:col-span-3 text-slate-300 row-text">Rua Central de Toi Sán, Macau</span>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
+                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-briefcase w-5"></i> Current Role:</span>
+                        <span class="sm:col-span-3 text-slate-300 row-text">Secondary Student (Science Class)</span>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
+                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-school w-5"></i> School:</span>
+                        <span class="sm:col-span-3 text-slate-300 row-text">Macau St. Joseph Diocesan College (The Fifth School)</span>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
+                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-language w-5"></i> Languages:</span>
+                        <span class="sm:col-span-3 text-slate-300 row-text">Cantonese, Mandarin, English</span>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
+                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-bullseye w-5"></i> My Goals:</span>
+                        <span class="sm:col-span-3 text-slate-300 row-text">To pursue higher education in Computer Science, focusing on the intersection of Artificial Intelligence, Data Science, and software development. I aim to leverage my analytical skills to build efficient, intelligent tech solutions that address real-world challenges.</span>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 px-3 rounded-lg">
+                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-quote-left w-5"></i> Motto:</span>
+                        <span class="sm:col-span-3 text-slate-300 row-text">"Failing to Prepare, Prepare to Fail."</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="split-section" id="hobbies">
+        <div class="max-w-6xl mx-auto w-full gs-reveal">
+            <div class="mb-8">
+                <div class="eyebrow text-[#00F5A0]">Interests</div>
+                <h2 class="text-3xl font-bold text-white font-['Space_Grotesk']">Hobbies</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="tilt-card zoom-card p-6 rounded-2xl border border-emerald-500/10 shadow-sm">
+                    <div class="card-icon bg-[#00F5A0]/10 text-[#00F5A0] w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-chess"></i></div>
+                    <h3 class="font-bold text-white text-lg mb-2">Chess</h3>
+                    <p class="text-slate-400 text-sm">Strategic sequences design tracking predictive moves.</p>
+                </div>
+               <div class="tilt-card zoom-card p-6 rounded-2xl border border-emerald-500/10 shadow-sm">
+                    <div class="card-icon bg-[#00F5A0]/10 text-[#00F5A0] w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-xl">
+                    <i class="fa-solid fa-chess"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg mb-2">Chinese Chess</h3>
+                    <p class="text-slate-400 text-sm">Positional coordination logic configurations.</p>
+                </div>
+                <div class="tilt-card zoom-card p-6 rounded-2xl border border-emerald-500/10 shadow-sm">
+                    <div class="card-icon bg-[#00F5A0]/10 text-[#00F5A0] w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-book-open"></i></div>
+                    <h3 class="font-bold text-white text-lg mb-2">Reading</h3>
+                    <p class="text-slate-400 text-sm">Acquiring foundational software architectural knowledge bases.</p>
+                </div>
+                <div class="tilt-card zoom-card p-6 rounded-2xl border border-emerald-500/10 shadow-sm">
+                    <div class="card-icon bg-[#00F5A0]/10 text-[#00F5A0] w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-table-tennis-paddle-ball"></i></div>
+                    <h3 class="font-bold text-white text-lg mb-2">Table Tennis</h3>
+                    <p class="text-slate-400 text-sm">Refining rapid real-time processing and reflex actions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- SECTION 4: SKILLS (Conforming exactly to image_0c5940.png filtering controls) -->
+    <section class="split-section" id="skills">
+        <div class="max-w-6xl mx-auto w-full gs-reveal">
+            <div class="text-center mb-8">
+                <div class="eyebrow text-[#00F5A0]">Competencies</div>
+                <h2 class="text-3xl font-bold text-white font-['Space_Grotesk']">Skills</h2>
+            </div>
+            
+            <!-- RECONSTRUCTED PILL MENU BASED ON image_0c5940.png PATTERNS -->
+            <div class="filter-pills-container flex flex-wrap justify-center gap-2 mb-12">
+                <button class="pill-btn active" onclick="filterSkills('all')">All</button>
+                <button class="pill-btn" onclick="filterSkills('programming')">Programming Language</button>
+                <button class="pill-btn" onclick="filterSkills('language')">Language</button>
+                <button class="pill-btn" onclick="filterSkills('web')">Web Development</button>
+                <button class="pill-btn" onclick="filterSkills('office')">Office</button>
+                <button class="pill-btn" onclick="filterSkills('design')">Design/Multimedia</button>
+                <button class="pill-btn" onclick="filterSkills('other')">Other</button>
+            </div>
+
+            <!-- SKILLS CARD DISPLAY GRID WITH INTEGRATED PROGRESS TRACKERS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="skillsGrid">
+                
+                <!-- === PROGRAMMING LANGUAGES === -->
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="programming">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="text-[#00F5A0] text-2xl"><i class="fa-brands fa-python"></i></div>
+                            <h4 class="font-bold text-lg text-white">Python</h4>
+                        </div>
+                        <span class="text-xs font-bold text-[#00F5A0]">85%</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Proficient in data operations, workflow automation scripts, and leveraging AI engineering packages to build smart applications.</p>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="programming">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="text-[#00F5A0] text-2xl"><i class="fa-solid fa-microchip"></i></div>
+                            <h4 class="font-bold text-lg text-white">C</h4>
+                        </div>
+                        <span class="text-xs font-bold text-[#00F5A0]">80%</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Competent with low-level compilation structures, memory management rules, and writing optimized logic for hardware or core algorithms.</p>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="programming">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="text-[#00F5A0] text-2xl"><i class="fa-solid fa-terminal"></i></div>
+                            <h4 class="font-bold text-lg text-white">C++</h4>
+                        </div>
+                        <span class="text-xs font-bold text-[#00F5A0]">80%</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Experienced in designing competitive algorithms, optimized data structures, and tuning performance loops for high-speed tournament runtimes.</p>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <!-- === LANGUAGES === -->
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="language">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="text-[#00F5A0] text-2xl"><i class="fa-solid fa-comments"></i></div>
+                            <h4 class="font-bold text-lg text-white">Cantonese</h4>
+                        </div>
+                        <span class="text-xs font-bold text-[#00F5A0]">100%</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Native spoken expression, highly effective localized group collaboration skills, and fluent public speaking delivery.</p>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="language">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="text-[#00F5A0] text-2xl"><i class="fa-solid fa-globe"></i></div>
+                            <h4 class="font-bold text-lg text-white">Mandarin</h4>
+                        </div>
+                        <span class="text-xs font-bold text-[#00F5A0]">85%</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">High professional fluency in structured presentations, interactive interpersonal communication, and leading collaborative team report briefs.</p>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="language">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="text-[#00F5A0] text-2xl"><i class="fa-solid fa-language"></i></div>
+                            <h4 class="font-bold text-lg text-white">English</h4>
+                        </div>
+                        <span class="text-xs font-bold text-[#00F5A0]">80%</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Advanced operational proficiency. Confidently handles complex academic literature, technical reports, and professional communication with strong argumentative writing and articulation skills.</p>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <!-- === WEB DEVELOPMENT === -->
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-cert-cat="web" data-skill-cat="web">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="text-[#00F5A0] text-2xl"><i class="fa-brands fa-html5"></i></div>
+                            <h4 class="font-bold text-lg text-white">HTML</h4>
+                        </div>
+                        <span class="text-xs font-bold text-[#00F5A0]">80%</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Proficient in designing structural layout setups, generating semantic document architectures, and configuring responsive view tree formatting rules.</p>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-cert-cat="web" data-skill-cat="web">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="text-[#00F5A0] text-2xl"><i class="fa-brands fa-css3-alt"></i></div>
+                            <h4 class="font-bold text-lg text-white">CSS</h4>
+                        </div>
+                        <span class="text-xs font-bold text-[#00F5A0]">75%</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Experienced with responsive styling tokens, controlling layout engines using Tailwind, and structuring complex Flexbox and CSS Grid matrices.</p>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-cert-cat="web" data-skill-cat="web">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="text-[#00F5A0] text-2xl"><i class="fa-brands fa-js"></i></div>
+                            <h4 class="font-bold text-lg text-white">JavaScript</h4>
+                        </div>
+                        <span class="text-xs font-bold text-[#00F5A0]">75%</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Skilled in DOM manipulation profiles, configuring front-end scripting logic flows, managing data structures, and triggering dynamic animations.</p>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <!-- === OFFICE === -->
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="office">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="text-[#00F5A0] text-2xl"><i class="fa-solid fa-file-excel"></i></div>
+                            <h4 class="font-bold text-lg text-white">Excel</h4>
+                        </div>
+                        <span class="text-xs font-bold text-[#00F5A0]">95%</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Expert in advanced formula architecture, data modeling, template auditing design, and developing macro script tracking blocks.</p>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="office">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="text-[#00F5A0] text-2xl"><i class="fa-solid fa-file-word"></i></div>
+                            <h4 class="font-bold text-lg text-white">Word</h4>
+                        </div>
+                        <span class="text-xs font-bold text-[#00F5A0]">90%</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Proficient in formal text layout optimization, managing advanced formatting guidelines, generating index trees, and structural technical documentation tracking.</p>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="office">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="text-[#00F5A0] text-2xl"><i class="fa-solid fa-file-powerpoint"></i></div>
+                            <h4 class="font-bold text-lg text-white">PowerPoint</h4>
+                        </div>
+                        <span class="text-xs font-bold text-slate-400">85%</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Skilled in presentation deck asset mapping, configuring custom template timeline controls, and designing dynamic group slideshow layouts.</p>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <!-- === DESIGN / MULTIMEDIA (Placeholder for future entry additions) === -->
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10 hidden-placeholder" data-skill-cat="design">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="text-[#00F5A0] text-2xl"><i class="fa-solid fa-photo-film"></i></div>
+                            <h4 class="font-bold text-lg text-white">Video Editing</h4>
+                        </div>
+                        <span class="text-xs font-bold text-[#00F5A0]">80%</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Proficient in timeline sequencing, multi-track audio synchronization, dynamic visual effects integration, and rendering high-quality narrative video campaigns.</p>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section" id="experiences">
+        <div class="max-w-4xl mx-auto w-full gs-reveal">
+            <div class="text-center mb-12">
+                <div class="eyebrow text-[#00F5A0]">School Activities</div>
+                <h2 class="text-3xl font-bold text-white font-['Space_Grotesk']">My Activities</h2>
+            </div>
+            <div class="timeline-tree-container">
+                <div class="timeline-node-item">
+                    <div class="timeline-badge-date">Sep 2023 - Present</div>
+                    <div class="glass-card zoom-card">
+                        <h3 class="font-bold text-white">Programming Class Specialist</h3>
+                        <p class="text-slate-400 text-sm mt-1">Deep computational logic loops, structure builds, tournament code deployments, and localized algorithm syntax customization scripts.</p>
+                    </div>
+                </div>
+                <div class="timeline-node-item">
+                    <div class="timeline-badge-date">Sep 2024 - July 2025</div>
+                    <div class="glass-card zoom-card">
+                        <h3 class="font-bold text-white">Mathematics Olympiad Class</h3>
+                        <p class="text-slate-400 text-sm mt-1">Dedicated optimization matrix loops focusing on combinatorics formulas, numerical equations, and complex spatial theories metrics.</p>
+                    </div>
+                </div>
+                <div class="timeline-node-item">
+                    <div class="timeline-badge-date">Sep 2024 - July 2025</div>
+                    <div class="glass-card zoom-card">
+                        <h3 class="font-bold text-white">Student Union Committee</h3>
+                        <p class="text-slate-400 text-sm mt-1">Coordinated large-scale campus logistics, administrative workflows, and organizational strategy arrays.</p>
+                    </div>
+                </div>
+                <div class="timeline-node-item">
+                    <div class="timeline-badge-date">Sep 2021 - Present</div>
+                    <div class="glass-card zoom-card">
+                        <h3 class="font-bold text-white">Track and Field Athlete</h3>
+                        <p class="text-slate-400 text-sm mt-1">Rigorous speed-endurance metrics tracking and athletic competitive training parameters balanced alongside full curriculum operations.</p>
+                    </div>
+                </div>
+                <div class="timeline-node-item">
+                    <div class="timeline-badge-date">2021 - 2022</div>
+                    <div class="glass-card zoom-card">
+                        <h3 class="font-bold text-white">Volunteer Team Core Representative</h3>
+                        <p class="text-slate-400 text-sm mt-1">Mobilized municipal service events, localized community operations assistance, and regional help pipelines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section" id="certificate">
+        <div class="max-w-7xl mx-auto w-full gs-reveal">
+            <div class="team-head text-center">
+                <div class="eyebrow text-[#00F5A0]">Registry</div>
+                <h2 class="text-4xl font-bold text-white font-['Space_Grotesk']">Academic Placements & <br><em>Olympiad Credentials</em></h2>
+            </div>
+
+            <div class="filter-pills-container flex flex-wrap justify-center gap-2 my-8">
+                <button class="cert-pill active" onclick="filterCertificates('all')">All Credentials</button>
+                <button class="cert-pill" onclick="filterCertificates('it')">Information Technology</button>
+                <button class="cert-pill" onclick="filterCertificates('mos')">Microsoft Office Specialists</button>
+                <button class="cert-pill" onclick="filterCertificates('others')">Others</button>
+            </div>
+
+            <div class="symptoms-rows-container" id="certsContainer">
+                
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/FISO_IT.jpg" alt="FISO Digital Tech">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">Future Intelligence Students Olympiad — Digital Technology</h3>
+                        <p>Awarded the Silver Medal placement evaluating computing parameters, automated networks logic, and code optimization parameters.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/FISO_math.jpg" alt="FISO Math">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Future Intelligence Students Olympiad — Mathematics</h3>
+                        <p>Achieved Bronze Medal recognition evaluating advanced numerical data arrays, combinatorics sequences, and logic metrics.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/FMO.jpg" alt="Fermat Math">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Fermat Mathematical Olympiad National Round</h3>
+                        <p>Secured Bronze Medal metrics analyzing theoretical algebra transformations, functions routing, and numerical proofs.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/alice.jpg" alt="Macao IT AI Contest">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">17th Macao-wide IT Competition — AI Creation Category</h3>
+                        <p>Earned the Merit Award for structural excellence inside localized 3D scripting tracks and artificial intelligence design tools.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/best_delegate.jpg" alt="MUN Award">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Greater Bay Area International Model United Nations</h3>
+                        <p>Awarded top honors as Best Delegate for executing complex international policy simulations and multi-party solution drafts.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/MOIS.jpg" alt="MOI Senior">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">Macao Olympiad in Informatics Senior Division</h3>
+                        <p>Secured Bronze Medal honors handling algorithmic data trees, memory optimization scripts, and complex runtime parameters using C++.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/singapore_global.jpg" alt="Singapore Finals">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Singapore Math Global Finals Competition</h3>
+                        <p>Earned Certificate of Participation competing internationally across core spatial tracking and combinatorial mathematics puzzles.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/phy_comp.jpg" alt="Physics Gold">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">International Children and Youth Physics Competition</h3>
+                        <p>Awarded absolute Gold Medal rating evaluating mechanical force balances, structural kinetics, and thermodynamic equations.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/chem_comp.jpg" alt="Chemistry Gold">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">International Children and Youth Chemistry Competition</h3>
+                        <p>Secured Gold Medal parameters testing acid-base calculations matrices, organic properties analysis, and elemental compounds datasets.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/bio_comp.jpg" alt="Biology Special">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">International Children and Youth Biology Competition</h3>
+                        <p>Earned premium Special Gold Medal metric tracking micro-cellular anatomy logs and structural inheritance sequence arrays.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/phy_bowl.jpg" alt="Asia Physics">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Asia Physics Bowl Challenge Tournament</h3>
+                        <p>Ranked First Runner Up overall analyzing advanced electromagnetic flux vectors and momentum matrix distribution mechanics.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/singapore_macau.jpg" alt="SMC Math">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Singapore Math Challenge Profile</h3>
+                        <p>Honored with the Commendable Award index solving complex equation structures and abstract discrete logic transforms.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/MOIJ.jpg" alt="MOI Junior Category">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">Macao Olympiad in Informatics Junior Division</h3>
+                        <p>Secured Bronze Medal ranking processing graph traversals, basic logic arrays algorithms, and runtime variables constraints.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/robofest.jpg" alt="Robofest Gold">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">ROBFEST Macau BottleSumo SeniorClassic</h3>
+                        <p>Clinched Gold Award 1st place designing embedded threshold sensory code arrays for mechanical microcontrollers.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/cyber.jpg" alt="Qianxin Tech">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">Qianxin Network Security Basic Attack/Defense Tech</h3>
+                        <p>Validated security framework profiles covering system penetration rules, data encryption protocols, and localized threat mitigation arrays.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/NCTE.jpg" alt="English NCE">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">New Concept Tests of English (Level 5)</h3>
+                        <p>Achieved verified 'Good' proficiency index tracking complex technical text evaluation, processing rules, and literacy syntax tracks.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/python_cert.jpg" alt="CIE Level 4">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">Chinese Institute of Electronics Python Level 1</h3>
+                        <p>Passed core structural testing validating object sorting matrices, code tree structures, and operational syntax performance parameters.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/excel_asso.jpg" alt="MOS Excel Associate">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Excel 365 Associate</h3>
+                        <p>Certified spreadsheet data modeling capability including standard formulas deployment, chart structuring, and worksheets management.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/excel_expert.jpg" alt="MOS Excel Expert">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Excel 365 Expert</h3>
+                        <p>Advanced system credential validating deployment of intricate logical calculation formulas, workbook macro automation, and nested lookup matrices.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/word_asso.jpg" alt="MOS Word Associate">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Word 365 Associate</h3>
+                        <p>Validation of semantic document generation, formatting guidelines compliance, table indexing, and page flow configuration rules.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/word_expert.jpg" alt="MOS Word Expert">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Word 365 Expert</h3>
+                        <p>Professional configuration certification mapping advanced layout reference tools, custom template controls, and variable integration macros.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/ppt_asso.jpg" alt="MOS PowerPoint">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — PowerPoint 365</h3>
+                        <p>Certified operational validation for slide show asset mapping, advanced presentation timeline structures, and multimedia asset compilation.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/mos_asso.jpg" alt="MOS Asso">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Associate (M365 Apps)</h3>
+                        <p>Validates professional-grade core proficiency in digital workflows across Microsoft Excel, Word, and PowerPoint packages.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/mos_expert.jpg" alt="MOS Expert">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Expert (M365 Apps)</h3>
+                        <p>Certifies advanced mastery and highest-tier technical skills in complex data modeling, automated scripting, and advanced architecture layout tracks.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/4by4_fourth.jpg" alt="Track and Field Relays">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">47th Macau Inter-School Athletics Championship</h3>
+                        <p>Competing in the highly competitive division, my team and I secured an impressive 4th-place finish in the 4*400m relay event matrix.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/4by4_7th.jpg" alt="Relay Heats">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">48th Macau Inter-School Athletics Championship</h3>
+                        <p>Successfully fought through the heats to secure a 7th-place finish in the finals, maintaining our standing among the top relay squads across the district track parameters.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/4by1_8th.jpg" alt="Relay Sprint">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">49th Macau Inter-School Athletics Championship</h3>
+                        <p>Testing explosive speed and baton-passing precision, I competed in the 4*100m sprint relay, earning an 8th-place finish overall within macro competition tiers.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/academic.jpg" alt="Scholastic Award">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Academic Achievement — First Prize</h3>
+                        <p>Awarded First Prize for outstanding scholastic achievement across natural sciences, math matrices, and algorithmic logic categories.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/student_union.jpg" alt="Student Union Cert">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Student Union Financial Department — Outstanding Performance</h3>
+                        <p>Honored for outstanding leadership, accounting audits, and financial resource allocation tracking as an active executive member.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/science_scholarship.jpg" alt="Macau Foundation Scholarship">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Macau Foundation Award for Excellence in Science and Technology (2024/2025)</h3>
+                        <p>Recipient of the prestigious government-backed Macau Foundation Prize. Awarded for achieving the 1st place ranking across all science stream disciplines, including Physics, Chemistry, Biology, and Information Technology.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/cpttm_mos.jpg" alt="CPTTM Micro Event">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">18th Macau Microsoft Office Skills Competition — Excel Finalist</h3>
+                        <p>Exclusively awarded to regional finalists of the competition, validating selection into the championship round and completion of elite-level training parameters.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/lit_his_geog.jpg" alt="lit-his-geog">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">2nd Runner-Up– Literature, History, and Geography Knowledge Quiz Competition (2025)</h3>
+                        <p>Achieved 3rd place in a collaborative group quiz competition testing advanced knowledge in regional geography, cultural history, and literature. Demonstrates well-rounded academic versatility, quick analytical thinking under pressure, and strong team communication skills.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+   <section class="split-section" id="projects">
+        <div class="max-w-6xl mx-auto w-full gs-reveal">
+            <div class="mb-8">
+                <div class="eyebrow text-[#00F5A0]">Builds</div>
+                <h2 class="text-3xl font-bold text-white font-['Space_Grotesk']">Application Showcase</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Project 1: Hanoi Tower -->
+                <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
+                    <div class="symptom-row-img h-[200px]" onclick="openLightbox(this)">
+                        <img src="hanoi_tower.png" alt="Hanoi Tower Robotics" class="w-full h-full object-cover">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-[#00F5A0] font-bold text-base mb-2">
+                            <i class="fa-solid fa-microchip"></i>
+                            <h3>Hanoi Tower Robotics</h3>
+                        </div>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">
+                            Automated solver for the Hanoi Tower puzzle using Arduino. Synchronizes physical motor hardware with recursive logic.
+                        </p>
+                        <a href="https://github.com/Cyrus0606/Hanoi-Tower-Claw-Composition" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                            <i class="fa-brands fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Chinese Chess -->
+                <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
+                    <div class="symptom-row-img h-[200px]" onclick="openLightbox(this)">
+                        <img src="chinese_chess.jpg" alt="Chinese Chess Engine" class="w-full h-full object-cover">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-[#00F5A0] font-bold text-base mb-2">
+                            <i class="fa-solid fa-chess-board"></i>
+                            <h3>Chinese Chess</h3>
+                        </div>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">
+                            Created an interactive online Chinese Chess board that allows two players to play Chinese Chess 
+                        </p>
+                        <a href="https://cyrus0606.github.io/CDSJ5-Chinese_Chess/" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                            <i class="fa-brands fa-github"></i> Check It Out! 
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Genetics Website -->
+                <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
+                    <div class="symptom-row-img h-[200px]" onclick="openLightbox(this)">
+                        <img src="trisomy.png" alt="Genetics Project" class="w-full h-full object-cover">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-[#00F5A0] font-bold text-base mb-2">
+                            <i class="fa-solid fa-dna"></i>
+                            <h3>All About Trisomy 21</h3>
+                        </div>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">
+                            Educational web platform exploring chromosomal mutations and genetic disease inheritance structures for biology studies.
+                        </p>
+                        <a href="https://cyrus0606.github.io/F5B_21_23_26_BiologyExamProject/" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                            <i class="fa-brands fa-github"></i> Check It Out! 
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4: IELTS Program (With embedded YouTube) -->
+                <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
+                    <div class="h-[200px] w-full overflow-hidden relative">
+                        <!-- FIXED: Using /embed/ URL format for iframe compatibility -->
+                    <iframe 
+                            class="w-full h-full" 
+                            src="https://www.youtube.com/embed/k_Bj0CftqqI" 
+                            title="IELTS App Demo" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-[#00F5A0] font-bold text-base mb-2">
+                            <i class="fa-brands fa-weixin"></i>
+                            <h3>IELTS Practice Wechat Mini Program</h3>
+                        </div>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">
+                            WeChat Mini Program utilizing backend speech diagnostic logic arrays and automated grading workflows.
+                    </p>
+        
+                        <!-- Action Links -->
+                    <div class="flex gap-4 mt-auto pt-4 border-t border-emerald-500/5">
+                    <a href="https://winglao.github.io/AiOralPractice/" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                            <i class="fa-brands fa-github"></i> View Code
+                    </a>
+                    <a href="https://youtu.be/k_Bj0CftqqI" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                            <i class="fa-brands fa-youtube"></i> Watch on YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Project: Macao IT Competition AI Creation -->
+            <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
+                    <div class="h-[200px] w-full overflow-hidden relative">
+                 <!-- YouTube Embed -->
+                    <iframe 
+                            class="w-full h-full" 
+                            src="https://www.youtube.com/embed/hsMMsBAN808" 
+                            title="AI Story Demo" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+            </div>
+            <div class="p-5 flex flex-col flex-grow">
+            <div class="flex items-center gap-2 text-[#00F5A0] font-bold text-base mb-2">
+            <i class="fa-solid fa-robot"></i>
+            <h3>Macao IT Competition: AI & 3D Programming</h3>
+            </div>
+            <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">
+                Created an AI-assisted visual poster and a short video to communicate key climate change data through engaging visual storytelling. Demonstrates practical skills in prompt engineering and digital media design.
+            </p>
+        
+                <!-- Action Links -->
+                <div class="flex gap-4 mt-auto pt-4 border-t border-emerald-500/5">
+                    <a href="https://youtu.be/hsMMsBAN808" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                        <i class="fa-brands fa-youtube"></i> Watch on YouTube
+                    </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project : Accounting Automation (NEW) -->
+            <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
+                <div class="h-[200px] w-full overflow-hidden relative bg-black">
+                <iframe 
+                        class="w-full h-full" 
+                        src="https://www.youtube.com/embed/lEoieYfrD04?rel=0&modestbranding=1" 
+                        title="Accounting Automation Demo" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+    
+            <div class="p-5 flex flex-col flex-grow">
+                    <div class="flex items-center gap-2 text-[#00F5A0] font-bold text-base mb-2">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>Accounting Book Automation</h3>
+            </div>
+            <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">
+                    Automated financial record-keeping built with <strong>n8n</strong>. This system streamlines data pipelines and minimizes manual entry errors.
+            </p>
+        
+            <div class="mt-auto pt-4 border-t border-emerald-500/5">
+                    <a href="https://youtu.be/lEoieYfrD04" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                    <i class="fa-brands fa-youtube"></i> Watch on YouTube
+                    </a>
+            </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#0b0f19] py-16 border-t border-emerald-500/10">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        
+        <!-- Contact Column -->
+        <div>
+            <h3 class="text-white font-bold text-xl mb-6 border-b-2 border-[#00F5A0] inline-block pb-1">Contact</h3>
+            <div class="space-y-4">
+                <div class="flex items-center gap-3 text-slate-400">
+                    <i class="fa-solid fa-phone text-[#00F5A0]"></i>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-slate-500">Phone Number</p>
+                        <p class="text-sm text-slate-200">+853 6340 7757</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 text-slate-400">
+                    <i class="fa-solid fa-envelope text-[#00F5A0]"></i>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-slate-500">Email</p>
+                        <p class="text-sm text-slate-200">cyruslikesschool0606@gmail.com</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 text-slate-400">
+                    <i class="fa-brands fa-weixin text-[#00F5A0]"></i>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-slate-500">WeChat</p>
+                        <p class="text-sm text-slate-200">CyrusW0606</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media Column -->
+        <div>
+            <h3 class="text-white font-bold text-xl mb-6 border-b-2 border-[#00F5A0] inline-block pb-1">Social Media</h3>
+            <div class="flex gap-4">
+                <a href="https://www.instagram.com/cyrus_w0606/" class="w-10 h-10 rounded-full border border-emerald-500/20 flex items-center justify-center text-[#00F5A0] hover:bg-[#00F5A0] hover:text-[#0b0f19] transition-all">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Optional: Scroll to Top Button -->
+    <div class="flex justify-center mt-12">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-10 h-10 rounded-full bg-emerald-500/10 text-[#00F5A0] flex items-center justify-center hover:bg-[#00F5A0] hover:text-[#0b0f19] transition-all">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </div>
+</footer>
+
+    <footer id="contact-footer" class="py-6 border-t border-emerald-500/5 text-center text-xs text-slate-500">
+    <p>&copy; 2026 Cyrus Wong.</p>
+    </footer>
+
+   <script>
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // --- INITIAL ANIMATIONS ---
+        gsap.set("#nav", { opacity: 0, y: -24 });
+        gsap.set("#subline", { opacity: 0, y: 24 });
+        gsap.set("#flyInPortrait", { x: "170%", opacity: 0, scale: 0.85 });
+
+        const initTimeline = gsap.timeline({ defaults: { ease: "power4.out" } });
+        initTimeline
+            .to("#nav", { opacity: 1, y: 0, duration: 1.0 }, 0.2)
+            .to("#flyInPortrait", { x: "0%", opacity: 1, scale: 1, duration: 1.4, ease: "power4.out" }, 0.3)
+            .to("#subline", { opacity: 1, y: 0, duration: 1.0 }, 0.8);
+
+        // --- NAVIGATION HANDLING ---
+        const menuLinks = document.querySelectorAll(".nav-links a, .logo");
+        menuLinks.forEach(link => {
+            link.addEventListener("click", (e) => {
+                const destinationPath = link.getAttribute("href");
+                if (destinationPath && destinationPath.startsWith("#")) {
+                    e.preventDefault();
+                    const nodeElement = document.querySelector(destinationPath);
+                    if (nodeElement) {
+                        gsap.to(window, {
+                            duration: 1.2,
+                            scrollTo: { y: nodeElement, offsetY: destinationPath === "#contact-footer" ? 0 : 75 },
+                            ease: "power4.inOut"
+                        });
+                    }
+                }
+            });
+        });
+
+        // --- GSAP REVEALS & TILT ---
+        document.querySelectorAll(".gs-reveal").forEach((element) => {
+            gsap.fromTo(element, 
+                { opacity: 0, y: 35 }, 
+                { scrollTrigger: { trigger: element, start: "top 92%", toggleActions: "play none none none" }, opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+            );
+        });
+
+        document.querySelectorAll(".tilt-card").forEach((card) => {
+            card.addEventListener("mousemove", (e) => {
+                const bounds = card.getBoundingClientRect();
+                const axisX = (e.clientX - bounds.left) / bounds.width - 0.5;
+                const axisY = (e.clientY - bounds.top) / bounds.height - 0.5;
+                gsap.to(card, { rotateX: -axisY * 12, rotateY: axisX * 12, duration: 0.35, ease: "power2.out", transformPerspective: 900, overwrite: "auto" });
+            });
+            card.addEventListener("mouseleave", () => {
+                gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.7, ease: "elastic.out(1, 0.6)", overwrite: "auto" });
+            });
+        });
+    });
+
+    // --- FILTER LOGIC (For image_257466.png) ---
+    window.filterSkills = function(targetCategory) {
+        document.querySelectorAll('#skills .pill-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${targetCategory}'`));
+        });
+
+        const activeNodes = [], inactiveNodes = [];
+        document.querySelectorAll('.skill-node-card').forEach(card => {
+            (targetCategory === 'all' || card.getAttribute('data-skill-cat') === targetCategory) 
+                ? activeNodes.push(card) : inactiveNodes.push(card);
+        });
+
+        gsap.set(inactiveNodes, { display: 'none', opacity: 0 });
+        gsap.set(activeNodes, { display: 'block' });
+        gsap.fromTo(activeNodes, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.04, ease: "power2.out", overwrite: "auto" });
+    };
+
+    // --- CERTIFICATE LOGIC (For image_257410.png) ---
+    window.filterCertificates = function(targetCategory) {
+        document.querySelectorAll('.cert-pill').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${targetCategory}'`));
+        });
+
+        const targets = [], hidden = [];
+        document.querySelectorAll('.cert-grid-card').forEach(card => {
+            (targetCategory === 'all' || card.getAttribute('data-cert-cat') === targetCategory) 
+                ? targets.push(card) : hidden.push(card);
+        });
+
+        gsap.set(hidden, { display: 'none', opacity: 0, scale: 0.95 });
+        gsap.set(targets, { display: 'flex' });
+        gsap.fromTo(targets, { opacity: 0, y: 20, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.04, ease: "power3.out", overwrite: "auto" });
+    };
+
+    // --- LIGHTBOX ENGINE ---
+    window.openLightbox = function(containerElement) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const img = containerElement.querySelector('img');
+        if (img) {
+            lightboxImg.src = img.src;
+            lightbox.classList.remove('hidden', 'opacity-0');
+        }
+    };
+
+    window.closeLightboxFunc = function() {
+        document.getElementById('lightbox').classList.add('hidden', 'opacity-0');
+    };
+</script>
+</body>
+</html>

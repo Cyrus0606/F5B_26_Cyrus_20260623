@@ -1,0 +1,406 @@
+/* ============================================================
+   CUSTOM SYSTEM: DEEP TECH METADATA STYLESHEET
+   ============================================================ */
+:root {
+    --bg: #0b0f19;          
+    --bg-2: #111827;        
+    --ink: #f3f4f6;         
+    --ink-soft: #9ca3af;    
+    --mute: #6b7280;        
+    --ghost: #1f2937;
+    --accent-1: #00F5A0;    
+    --accent-2: #00b876;    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: auto !important; 
+}
+
+.grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.015;
+    mix-blend-mode: screen;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.8 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ============================================================
+   PREMIUM SMOOTH TRANSITION HOVER RESPONSES
+   ============================================================ */
+.zoom-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.3s ease !important;
+    will-change: transform, box-shadow;
+}
+
+.zoom-card:hover {
+    transform: scale(1.03) translateY(-4px) !important;
+    border-color: rgba(0, 245, 160, 0.35) !important;
+    box-shadow: 0 20px 40px rgba(0, 245, 160, 0.1) !important;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+/* .eyebrow::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-1);
+    box-shadow: 0 0 8px var(--accent-1);
+} */
+
+/* STICKY GLASS HEADER BUILD */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(11, 15, 25, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 245, 160, 0.08);
+}
+.logo-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent-1);
+    box-shadow: 0 0 8px var(--accent-1);
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2px;
+}
+.nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+}
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-1);
+    background: rgba(0, 245, 160, 0.06);
+}
+.nav-cta {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease;
+}
+.nav-cta:hover { transform: scale(1.03); }
+
+/* HERO DISPLAY SPECIFICATIONS */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 0 60px 0;
+}
+.profile-image-wrapper {
+    width: 310px;
+    height: 380px;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 245, 160, 0.15);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    background: var(--bg-2);
+    will-change: transform, opacity;
+}
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* MARQUEE RUNNER BACKGROUND TRACK */
+.bg-text-wrap {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.018; 
+}
+.bg-text {
+    font-weight: 900;
+    font-size: clamp(120px, 18vw, 260px);
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    white-space: nowrap;
+    display: inline-block;
+    animation: flowText 45s linear infinite;
+}
+@keyframes flowText {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); } 
+}
+
+.split-section {
+    padding: 90px 4%;
+    position: relative;
+    z-index: 10;
+}
+.glass-card {
+    background: #111827;
+}
+
+/* FILTER PILLS STYLING ELEMENTS */
+.filter-pills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.pill-btn, .cert-pill {
+    background: #111827;
+    border: 1px solid rgba(0, 245, 160, 0.12);
+    padding: 8px 22px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.pill-btn:hover, .pill-btn.active, .cert-pill:hover, .cert-pill.active {
+    background: var(--accent-1) !important;
+    color: #000000 !important;
+    border-color: var(--accent-1) !important;
+    box-shadow: 0 0 15px rgba(0, 245, 160, 0.3);
+}
+
+.skill-node-card {
+    background: #111827;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+.skill-node-card:hover {
+    transform: scale(1.03) translateY(-4px);
+    border-color: rgba(0, 245, 160, 0.25);
+}
+.badge {
+    display: inline-block;
+    background: rgba(0, 245, 160, 0.08);
+    color: var(--accent-1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+}
+.tilt-card {
+    background: #111827;
+    border: 1px solid rgba(0, 245, 160, 0.05);
+}
+
+/* PROCESS TIMELINE MATRIX */
+.timeline-section {
+    padding: 90px 4%;
+}
+.timeline-tree-container {
+    position: relative;
+    padding-left: 36px;
+    border-left: 2px solid rgba(0, 245, 160, 0.15);
+}
+.timeline-node-item {
+    position: relative;
+    margin-bottom: 36px;
+}
+.timeline-node-item::before {
+    content: "";
+    position: absolute;
+    left: -46px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 4px solid var(--accent-1);
+    box-shadow: 0 0 8px var(--accent-1);
+    z-index: 5;
+}
+.timeline-badge-date {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--accent-1);
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+/* ============================================================
+   CERTIFICATE RE-ENGINEERING: ULTRA EXPANDED A4 RATIO GRID WINDOWS
+   ============================================================ */
+.team-section {
+    padding: 100px 4%;
+    background-color: #0d1322;
+}
+.symptoms-rows-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 28px;
+}
+.symptom-row-card {
+    background: #111827;
+    border: 1px solid rgba(0, 245, 160, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    border-radius: 20px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s ease, 
+                border-color 0.4s ease !important;
+    will-change: transform, opacity;
+}
+
+/* Magnifying Lightbox Feature Logic */
+.symptom-row-img {
+    width: 100%;
+    height: 380px; 
+    overflow: hidden;
+    background-color: #080c14;
+    border-bottom: 1px solid rgba(0, 245, 160, 0.06);
+    position: relative;
+    cursor: pointer;
+}
+.symptom-row-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    background-color: #0c1220;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.magnify-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 15, 25, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    color: var(--accent-1);
+    font-size: 2.5rem;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.symptom-row-card:hover {
+    transform: scale(1.025) translateY(-4px) !important;
+    border-color: rgba(0, 245, 160, 0.4) !important;
+    box-shadow: 0 25px 50px rgba(0, 245, 160, 0.12);
+}
+.symptom-row-card:hover .symptom-row-img img {
+    transform: scale(1.03);
+}
+.symptom-row-card:hover .magnify-overlay {
+    opacity: 1;
+}
+
+.symptom-row-content {
+    padding: 26px;
+}
+.symptom-badge {
+    display: inline-block;
+    background: rgba(0, 245, 160, 0.06);
+    color: var(--accent-1);
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+}
+.symptom-row-content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #ffffff;
+}
+.symptom-row-content p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+}
+
+.references-section {
+    padding: 80px 4%;
+    background: #0b0f19;
+    border-top: 1px solid rgba(0, 245, 160, 0.05);
+}
+
+@media (max-width: 900px) {
+    .nav-links, .nav-cta { display: none; }
+    .symptoms-rows-container { grid-template-columns: 1fr; }
+    .symptom-row-img { height: 280px; }
+}
+
+/* About Me Row Hover Animations */
+.about-row {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid transparent;
+    cursor: default;
+}
+
+.about-row:hover {
+    transform: translateX(10px); /* Smooth slide effect */
+    background-color: rgba(0, 245, 160, 0.03); /* Subtle emerald glow */
+    border-color: rgba(0, 245, 160, 0.15); /* Soft border appearance */
+    padding-left: 20px; /* Expands to show interaction */
+}
+
+.about-row .row-text {
+    transition: color 0.3s ease;
+}
+
+.about-row:hover .row-text {
+    color: #ffffff; /* Text becomes brighter on hover */
+}
+
+/* Icon rotation effect on hover */
+.about-row:hover i {
+    transform: scale(1.1);
+    color: #ffffff;
+}
