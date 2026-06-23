@@ -26,28 +26,39 @@
         <img id="lightboxImg" src="" class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl border border-[#00F5A0]/20 transform scale-95 transition-transform duration-300">
     </div>
 
-    <nav class="nav" id="nav">
-        <div class="logo font-bold text-xl tracking-wider text-[#00F5A0]">
-            CYRUS<span class="text-slate-500">.W</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experiences">Experiences</a></li>
-            <li><a href="#certificate">Certificate</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact-footer">Contact</a></li>
-        </ul>
-        <button class="nav-cta" id="navContactBtn" onclick="gsap.to(window, {duration: 1, scrollTo: '#contact'})">
-            Get In Touch
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-            </svg>
-        </button>
-    </nav>
+    <nav id="nav" class="fixed w-full z-50 px-8 py-4 flex items-center justify-between">
+    
+    <div class="logo font-bold text-xl text-[#00F5A0] cursor-pointer">CYRUS.W</div>
+    
+    <ul class="nav-links hidden md:flex items-center gap-8 justify-end flex-1 mr-8">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#certificate">Certificate</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact-footer">Contact</a></li>
+    </ul>
+
+    <button id="hamburger" class="md:hidden text-[#00F5A0] text-2xl">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</nav>
+
+<div id="mobile-menu" class="fixed inset-0 bg-[#0b0f19]/95 z-40 hidden flex-col items-center justify-center gap-8">
+    <button id="close-menu" class="absolute top-8 right-8 text-[#00F5A0] text-3xl"><i class="fa-solid fa-xmark"></i></button>
+    <ul class="text-center space-y-6 text-xl">
+        <li><a href="#home" class="mobile-link text-white">Home</a></li>
+        <li><a href="#about" class="mobile-link text-white">About</a></li>
+        <li><a href="#hobbies" class="mobile-link text-white">Hobbies</a></li>
+        <li><a href="#skills" class="mobile-link text-white">Skills</a></li>
+        <li><a href="#experiences" class="mobile-link text-white">Experiences</a></li>
+        <li><a href="#certificate" class="mobile-link text-white">Certificate</a></li>
+        <li><a href="#projects" class="mobile-link text-white">Projects</a></li>
+        <li><a href="#contact-footer" class="mobile-link text-white">Contact</a></li>
+    </ul>
+</div>
 
     <header class="hero relative" id="home">
         <div class="bg-text-wrap">
@@ -1143,6 +1154,26 @@
     window.closeLightboxFunc = function() {
         document.getElementById('lightbox').classList.add('hidden', 'opacity-0');
     };
+
+    const hamburger = document.getElementById('hamburger');
+const closeMenu = document.getElementById('close-menu');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+    gsap.fromTo("#mobile-menu", { opacity: 0 }, { opacity: 1, duration: 0.3 });
+});
+
+closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+    });
+});
 </script>
 </body>
 </html>
