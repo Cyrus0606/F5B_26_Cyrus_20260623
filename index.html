@@ -16,8 +16,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <!-- Load tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
 </head>
 <body class="text-[#cbd5e1] antialiased">
+    <div id="tsparticles" class="fixed inset-0 z-0 pointer-events-none"></div>
 
     <div class="grain"></div>
 
@@ -1182,6 +1185,33 @@
             link.addEventListener('click', () => toggleMenu(false));
         });
         // --- END OF NEW MENU CODE ---
+        tsParticles.load("tsparticles", {
+    particles: {
+        number: { value: 60 },
+        color: { value: "#00F5A0" }, // Your "Cyber Emerald" color
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 2 },
+        move: {
+            enable: true,
+            speed: 1,
+            direction: "none",
+            outModes: { default: "out" }
+        },
+        links: {
+            enable: true,
+            distance: 150,
+            color: "#00F5A0",
+            opacity: 0.15,
+            width: 1
+        }
+    },
+    interactivity: {
+        events: {
+            onHover: { enable: true, mode: "grab" }
+        }
+    }
+});
 </script>
 </body>
 </html>
