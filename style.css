@@ -28,7 +28,28 @@ html, body {
 
 /* Ensure the first section doesn't hide behind the fixed nav */
 #home {
-    padding-top: 100px; /* Adjust this value to match your nav height */
+    padding-top: 100px; 
+}
+
+/* ============================================================
+   NEW LAYERING FIXES FOR PARTICLES & PRELOADER
+   ============================================================ */
+#tsparticles {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none; /* Let mouse clicks pass through to the cards below */
+}
+
+/* Make sure all content floats above the particles */
+header.hero, section, footer {
+    position: relative;
+    z-index: 10;
+}
+
+/* Prevent elements from flickering before the Preloader reveals them */
+#nav, .hero .grid > div, #flyInPortrait, #subline {
+    opacity: 0;
 }
 
 .grain {
@@ -134,9 +155,11 @@ html, body {
 .nav-cta:hover { transform: scale(1.03); }
 
 #nav {
-    backdrop-filter: blur(10px); /* Blurs the content scrolling behind */
-    background-color: rgba(11, 15, 25, 0.8); /* Slight transparency */
+    backdrop-filter: blur(10px); 
+    background-color: rgba(11, 15, 25, 0.8); 
     transition: all 0.3s ease;
+    z-index: 50;
+    position: fixed;
 }
 
 /* HERO DISPLAY SPECIFICATIONS */
@@ -396,10 +419,10 @@ html, body {
 }
 
 .about-row:hover {
-    transform: translateX(10px); /* Smooth slide effect */
-    background-color: rgba(0, 245, 160, 0.03); /* Subtle emerald glow */
-    border-color: rgba(0, 245, 160, 0.15); /* Soft border appearance */
-    padding-left: 20px; /* Expands to show interaction */
+    transform: translateX(10px); 
+    background-color: rgba(0, 245, 160, 0.03); 
+    border-color: rgba(0, 245, 160, 0.15); 
+    padding-left: 20px; 
 }
 
 .about-row .row-text {
@@ -407,10 +430,9 @@ html, body {
 }
 
 .about-row:hover .row-text {
-    color: #ffffff; /* Text becomes brighter on hover */
+    color: #ffffff; 
 }
 
-/* Icon rotation effect on hover */
 .about-row:hover i {
     transform: scale(1.1);
     color: #ffffff;
