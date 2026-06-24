@@ -27,18 +27,17 @@
     </div>
 
     <nav id="nav" class="fixed w-full z-50 px-8 py-4 flex items-center justify-between">
-    
     <div class="logo font-bold text-xl text-[#00F5A0] cursor-pointer">CYRUS.W</div>
     
-    <ul class="nav-links hidden md:flex items-center gap-8 justify-end flex-1 mr-8">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#hobbies">Hobbies</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experiences">Experiences</a></li>
-        <li><a href="#certificate">Certificate</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact-footer">Contact</a></li>
+    <ul class="nav-links hidden md:flex items-center gap-8 ml-auto">
+        <li><a href="#home" class="text-white hover:text-[#00F5A0]">Home</a></li>
+        <li><a href="#about" class="text-white hover:text-[#00F5A0]">About</a></li>
+        <li><a href="#hobbies" class="text-white hover:text-[#00F5A0]">Hobbies</a></li>
+        <li><a href="#skills" class="text-white hover:text-[#00F5A0]">Skills</a></li>
+        <li><a href="#experiences" class="text-white hover:text-[#00F5A0]">Experiences</a></li>
+        <li><a href="#certificate" class="text-white hover:text-[#00F5A0]">Certificate</a></li>
+        <li><a href="#projects" class="text-white hover:text-[#00F5A0]">Projects</a></li>
+        <li><a href="#contact-footer" class="text-white hover:text-[#00F5A0]">Contact</a></li>
     </ul>
 
     <button id="hamburger" class="md:hidden text-[#00F5A0] text-2xl">
@@ -46,9 +45,11 @@
     </button>
 </nav>
 
-<div id="mobile-menu" class="fixed inset-0 bg-[#0b0f19]/95 z-40 hidden flex-col items-center justify-center gap-8">
-    <button id="close-menu" class="absolute top-8 right-8 text-[#00F5A0] text-3xl"><i class="fa-solid fa-xmark"></i></button>
-    <ul class="text-center space-y-6 text-xl">
+<div id="mobile-menu" class="fixed inset-0 bg-[#0b0f19]/95 z-[100] hidden flex-col items-center justify-center gap-8">
+    <button id="close-menu" class="absolute top-8 right-8 text-[#00F5A0] text-4xl p-4">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+    <ul class="text-center space-y-8 text-2xl">
         <li><a href="#home" class="mobile-link text-white">Home</a></li>
         <li><a href="#about" class="mobile-link text-white">About</a></li>
         <li><a href="#hobbies" class="mobile-link text-white">Hobbies</a></li>
@@ -1155,25 +1156,32 @@
         document.getElementById('lightbox').classList.add('hidden', 'opacity-0');
     };
 
-    const hamburger = document.getElementById('hamburger');
-const closeMenu = document.getElementById('close-menu');
-const mobileMenu = document.getElementById('mobile-menu');
+        const hamburger = document.getElementById('hamburger');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-hamburger.addEventListener('click', () => {
-    mobileMenu.classList.remove('hidden');
-    gsap.fromTo("#mobile-menu", { opacity: 0 }, { opacity: 1, duration: 0.3 });
-});
+        function toggleMenu(show) {
+            if (show) {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Lock scroll
+                gsap.to(mobileMenu, { opacity: 1, duration: 0.3 });
+            } else {
+                document.body.style.overflow = 'auto'; // Unlock scroll
+                gsap.to(mobileMenu, { 
+                    opacity: 0, 
+                    duration: 0.3, 
+                    onComplete: () => mobileMenu.classList.add('hidden') 
+                });
+            }
+        }
 
-closeMenu.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-});
+        hamburger.addEventListener('click', () => toggleMenu(true));
+        closeMenu.addEventListener('click', () => toggleMenu(false));
 
-// Close menu when a link is clicked
-document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-    });
-});
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => toggleMenu(false));
+        });
+        // --- END OF NEW MENU CODE ---
 </script>
 </body>
 </html>
