@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,10 +16,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-    <!-- Load tsParticles -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
 </head>
-<body class="text-[#cbd5e1] antialiased">
+<body class="text-[#cbd5e1] antialiased overflow-hidden">
+
+    <div id="preloader" class="fixed inset-0 z-[200] bg-[#0b0f19] flex items-center justify-center">
+        <div class="text-[#00F5A0] text-3xl font-bold tracking-widest animate-pulse">CYRUS.W</div>
+    </div>
+
     <div id="tsparticles" class="fixed inset-0 z-0 pointer-events-none"></div>
 
     <div class="grain"></div>
@@ -64,7 +68,7 @@
     </ul>
 </div>
 
-    <header class="hero relative" id="home">
+    <header class="hero relative z-10" id="home">
         <div class="bg-text-wrap">
             <div class="bg-text">
                 NOTHING IS IMPOSSIBLE &nbsp; NOTHING IS IMPOSSIBLE &nbsp; NOTHING IS IMPOSSIBLE &nbsp; ;
@@ -90,7 +94,7 @@
         </div>
     </header>
 
-    <section class="split-section" id="about">
+    <section class="split-section relative z-10" id="about">
         <div class="max-w-6xl mx-auto w-full gs-reveal">
             <div class="text-left mb-6">
                 <h2 class="text-3xl font-bold tracking-tight text-white border-b-2 border-[#00F5A0] inline-block pb-1 font-['Space_Grotesk']">About Me</h2>
@@ -141,7 +145,7 @@
         </div>
     </section>
 
-    <section class="split-section" id="hobbies">
+    <section class="split-section relative z-10" id="hobbies">
         <div class="max-w-6xl mx-auto w-full gs-reveal">
             <div class="mb-8">
                 <div class="eyebrow text-[#00F5A0]">Interests</div>
@@ -174,15 +178,13 @@
         </div>
     </section>
 
-   <!-- SECTION 4: SKILLS (Conforming exactly to image_0c5940.png filtering controls) -->
-    <section class="split-section" id="skills">
+   <section class="split-section relative z-10" id="skills">
         <div class="max-w-6xl mx-auto w-full gs-reveal">
             <div class="text-center mb-8">
                 <div class="eyebrow text-[#00F5A0]">Competencies</div>
                 <h2 class="text-3xl font-bold text-white font-['Space_Grotesk']">Skills</h2>
             </div>
             
-            <!-- RECONSTRUCTED PILL MENU BASED ON image_0c5940.png PATTERNS -->
             <div class="filter-pills-container flex flex-wrap justify-center gap-2 mb-12">
                 <button class="pill-btn active" onclick="filterSkills('all')">All</button>
                 <button class="pill-btn" onclick="filterSkills('programming')">Programming Language</button>
@@ -193,10 +195,8 @@
                 <button class="pill-btn" onclick="filterSkills('other')">Other</button>
             </div>
 
-            <!-- SKILLS CARD DISPLAY GRID WITH INTEGRATED PROGRESS TRACKERS -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="skillsGrid">
                 
-                <!-- === PROGRAMMING LANGUAGES === -->
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="programming">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -239,7 +239,6 @@
                     </div>
                 </div>
 
-                <!-- === LANGUAGES === -->
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="language">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -282,7 +281,6 @@
                     </div>
                 </div>
 
-                <!-- === WEB DEVELOPMENT === -->
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-cert-cat="web" data-skill-cat="web">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -325,7 +323,6 @@
                     </div>
                 </div>
 
-                <!-- === OFFICE === -->
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="office">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -368,7 +365,6 @@
                     </div>
                 </div>
 
-                <!-- === DESIGN / MULTIMEDIA (Placeholder for future entry additions) === -->
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10 hidden-placeholder" data-skill-cat="design">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -387,7 +383,7 @@
         </div>
     </section>
 
-    <section class="timeline-section" id="experiences">
+    <section class="timeline-section relative z-10" id="experiences">
         <div class="max-w-4xl mx-auto w-full gs-reveal">
             <div class="text-center mb-12">
                 <div class="eyebrow text-[#00F5A0]">School Activities</div>
@@ -433,7 +429,7 @@
         </div>
     </section>
 
-    <section class="team-section" id="certificate">
+    <section class="team-section relative z-10" id="certificate">
         <div class="max-w-7xl mx-auto w-full gs-reveal">
             <div class="team-head text-center">
                 <div class="eyebrow text-[#00F5A0]">Registry</div>
@@ -837,7 +833,7 @@
         </div>
     </section>
 
-   <section class="split-section" id="projects">
+   <section class="split-section relative z-10" id="projects">
         <div class="max-w-6xl mx-auto w-full gs-reveal">
             <div class="mb-8">
                 <div class="eyebrow text-[#00F5A0]">Builds</div>
@@ -846,7 +842,6 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- Project 1: Hanoi Tower -->
                 <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
                     <div class="symptom-row-img h-[200px]" onclick="openLightbox(this)">
                         <img src="hanoi_tower.png" alt="Hanoi Tower Robotics" class="w-full h-full object-cover">
@@ -866,7 +861,6 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Chinese Chess -->
                 <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
                     <div class="symptom-row-img h-[200px]" onclick="openLightbox(this)">
                         <img src="chinese_chess.jpg" alt="Chinese Chess Engine" class="w-full h-full object-cover">
@@ -886,7 +880,6 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Genetics Website -->
                 <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
                     <div class="symptom-row-img h-[200px]" onclick="openLightbox(this)">
                         <img src="trisomy.png" alt="Genetics Project" class="w-full h-full object-cover">
@@ -906,10 +899,8 @@
                     </div>
                 </div>
 
-                <!-- Project 4: IELTS Program (With embedded YouTube) -->
                 <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
                     <div class="h-[200px] w-full overflow-hidden relative">
-                        <!-- FIXED: Using /embed/ URL format for iframe compatibility -->
                     <iframe 
                             class="w-full h-full" 
                             src="https://www.youtube.com/embed/k_Bj0CftqqI" 
@@ -927,8 +918,6 @@
                     <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">
                             WeChat Mini Program utilizing backend speech diagnostic logic arrays and automated grading workflows.
                     </p>
-        
-                        <!-- Action Links -->
                     <div class="flex gap-4 mt-auto pt-4 border-t border-emerald-500/5">
                     <a href="https://winglao.github.io/AiOralPractice/" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
                             <i class="fa-brands fa-github"></i> View Code
@@ -939,10 +928,9 @@
                 </div>
             </div>
         </div>
-        <!-- Project: Macao IT Competition AI Creation -->
-            <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
+
+        <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
                     <div class="h-[200px] w-full overflow-hidden relative">
-                 <!-- YouTube Embed -->
                     <iframe 
                             class="w-full h-full" 
                             src="https://www.youtube.com/embed/hsMMsBAN808" 
@@ -961,7 +949,6 @@
                 Created an AI-assisted visual poster and a short video to communicate key climate change data through engaging visual storytelling. Demonstrates practical skills in prompt engineering and digital media design.
             </p>
         
-                <!-- Action Links -->
                 <div class="flex gap-4 mt-auto pt-4 border-t border-emerald-500/5">
                     <a href="https://youtu.be/hsMMsBAN808" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
                         <i class="fa-brands fa-youtube"></i> Watch on YouTube
@@ -969,7 +956,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Project : Accounting Automation (NEW) -->
+
             <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
                 <div class="h-[200px] w-full overflow-hidden relative bg-black">
                 <iframe 
@@ -1001,10 +988,9 @@
         </div>
     </section>
 
-    <footer class="bg-[#0b0f19] py-16 border-t border-emerald-500/10">
+    <footer class="bg-[#0b0f19] py-16 border-t border-emerald-500/10 relative z-10">
     <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
         
-        <!-- Contact Column -->
         <div>
             <h3 class="text-white font-bold text-xl mb-6 border-b-2 border-[#00F5A0] inline-block pb-1">Contact</h3>
             <div class="space-y-4">
@@ -1032,7 +1018,6 @@
             </div>
         </div>
 
-        <!-- Social Media Column -->
         <div>
             <h3 class="text-white font-bold text-xl mb-6 border-b-2 border-[#00F5A0] inline-block pb-1">Social Media</h3>
             <div class="flex gap-4">
@@ -1043,7 +1028,6 @@
         </div>
     </div>
     
-    <!-- Optional: Scroll to Top Button -->
     <div class="flex justify-center mt-12">
         <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-10 h-10 rounded-full bg-emerald-500/10 text-[#00F5A0] flex items-center justify-center hover:bg-[#00F5A0] hover:text-[#0b0f19] transition-all">
             <i class="fa-solid fa-arrow-up"></i>
@@ -1051,24 +1035,59 @@
     </div>
 </footer>
 
-    <footer id="contact-footer" class="py-6 border-t border-emerald-500/5 text-center text-xs text-slate-500">
+    <footer id="contact-footer" class="py-6 border-t border-emerald-500/5 text-center text-xs text-slate-500 relative z-10">
     <p>&copy; 2026 Cyrus Wong.</p>
     </footer>
 
    <script>
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-    document.addEventListener("DOMContentLoaded", () => {
-        // --- INITIAL ANIMATIONS ---
+    window.addEventListener("load", () => {
+        // --- INITIALIZE PARTICLES ---
+        tsParticles.load("tsparticles", {
+            particles: {
+                number: { value: 60 },
+                color: { value: "#00F5A0" },
+                shape: { type: "circle" },
+                opacity: { value: 0.3 },
+                size: { value: 2 },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: "none",
+                    outModes: { default: "out" }
+                },
+                links: {
+                    enable: true,
+                    distance: 150,
+                    color: "#00F5A0",
+                    opacity: 0.15,
+                    width: 1
+                }
+            },
+            interactivity: {
+                events: {
+                    onHover: { enable: true, mode: "grab" }
+                }
+            }
+        });
+
+        // --- ENTRANCE ANIMATIONS & PRELOADER ---
         gsap.set("#nav", { opacity: 0, y: -24 });
         gsap.set("#subline", { opacity: 0, y: 24 });
         gsap.set("#flyInPortrait", { x: "170%", opacity: 0, scale: 0.85 });
+        gsap.set(".hero .grid > div", { opacity: 0, y: 35 });
 
-        const initTimeline = gsap.timeline({ defaults: { ease: "power4.out" } });
-        initTimeline
-            .to("#nav", { opacity: 1, y: 0, duration: 1.0 }, 0.2)
-            .to("#flyInPortrait", { x: "0%", opacity: 1, scale: 1, duration: 1.4, ease: "power4.out" }, 0.3)
-            .to("#subline", { opacity: 1, y: 0, duration: 1.0 }, 0.8);
+        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+        
+        tl.to("#preloader", { opacity: 0, duration: 0.8, delay: 0.5, onComplete: () => {
+            document.getElementById("preloader").style.display = "none";
+            document.body.classList.remove("overflow-hidden"); // Restores scroll
+        }})
+        .to("#nav", { opacity: 1, y: 0, duration: 1.0 }, "-=0.4")
+        .to("#flyInPortrait", { x: "0%", opacity: 1, scale: 1, duration: 1.4 }, "-=0.8")
+        .to(".hero .grid > div", { opacity: 1, y: 0, duration: 1.0, stagger: 0.2 }, "-=1.0")
+        .to("#subline", { opacity: 1, y: 0, duration: 1.0 }, "-=1.2");
 
         // --- NAVIGATION HANDLING ---
         const menuLinks = document.querySelectorAll(".nav-links a, .logo");
@@ -1108,9 +1127,9 @@
                 gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.7, ease: "elastic.out(1, 0.6)", overwrite: "auto" });
             });
         });
-    });
+    }); // <-- End of window.load
 
-    // --- FILTER LOGIC (For image_257466.png) ---
+    // --- HELPER FUNCTIONS ---
     window.filterSkills = function(targetCategory) {
         document.querySelectorAll('#skills .pill-btn').forEach(btn => {
             btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${targetCategory}'`));
@@ -1127,7 +1146,6 @@
         gsap.fromTo(activeNodes, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.04, ease: "power2.out", overwrite: "auto" });
     };
 
-    // --- CERTIFICATE LOGIC (For image_257410.png) ---
     window.filterCertificates = function(targetCategory) {
         document.querySelectorAll('.cert-pill').forEach(btn => {
             btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${targetCategory}'`));
@@ -1144,7 +1162,6 @@
         gsap.fromTo(targets, { opacity: 0, y: 20, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.04, ease: "power3.out", overwrite: "auto" });
     };
 
-    // --- LIGHTBOX ENGINE ---
     window.openLightbox = function(containerElement) {
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
@@ -1159,59 +1176,31 @@
         document.getElementById('lightbox').classList.add('hidden', 'opacity-0');
     };
 
-        const hamburger = document.getElementById('hamburger');
-        const closeMenu = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
+    const hamburger = document.getElementById('hamburger');
+    const closeMenu = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-        function toggleMenu(show) {
-            if (show) {
-                mobileMenu.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Lock scroll
-                gsap.to(mobileMenu, { opacity: 1, duration: 0.3 });
-            } else {
-                document.body.style.overflow = 'auto'; // Unlock scroll
-                gsap.to(mobileMenu, { 
-                    opacity: 0, 
-                    duration: 0.3, 
-                    onComplete: () => mobileMenu.classList.add('hidden') 
-                });
-            }
-        }
-
-        hamburger.addEventListener('click', () => toggleMenu(true));
-        closeMenu.addEventListener('click', () => toggleMenu(false));
-
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => toggleMenu(false));
-        });
-        // --- END OF NEW MENU CODE ---
-        tsParticles.load("tsparticles", {
-    particles: {
-        number: { value: 60 },
-        color: { value: "#00F5A0" }, // Your "Cyber Emerald" color
-        shape: { type: "circle" },
-        opacity: { value: 0.3 },
-        size: { value: 2 },
-        move: {
-            enable: true,
-            speed: 1,
-            direction: "none",
-            outModes: { default: "out" }
-        },
-        links: {
-            enable: true,
-            distance: 150,
-            color: "#00F5A0",
-            opacity: 0.15,
-            width: 1
-        }
-    },
-    interactivity: {
-        events: {
-            onHover: { enable: true, mode: "grab" }
+    function toggleMenu(show) {
+        if (show) {
+            mobileMenu.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            gsap.to(mobileMenu, { opacity: 1, duration: 0.3 });
+        } else {
+            document.body.classList.remove('overflow-hidden');
+            gsap.to(mobileMenu, { 
+                opacity: 0, 
+                duration: 0.3, 
+                onComplete: () => mobileMenu.classList.add('hidden') 
+            });
         }
     }
-});
+
+    hamburger.addEventListener('click', () => toggleMenu(true));
+    closeMenu.addEventListener('click', () => toggleMenu(false));
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => toggleMenu(false));
+    });
 </script>
 </body>
 </html>
