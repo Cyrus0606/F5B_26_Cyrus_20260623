@@ -88,14 +88,6 @@ header.hero, section, footer {
     font-weight: 700;
     margin-bottom: 12px;
 }
-/* .eyebrow::before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-1);
-    box-shadow: 0 0 8px var(--accent-1);
-} */
 
 /* STICKY GLASS HEADER BUILD */
 .nav {
@@ -113,6 +105,7 @@ header.hero, section, footer {
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(0, 245, 160, 0.08);
 }
+
 .logo-dot {
     width: 10px;
     height: 10px;
@@ -120,11 +113,13 @@ header.hero, section, footer {
     background: var(--accent-1);
     box-shadow: 0 0 8px var(--accent-1);
 }
+
 .nav-links {
     list-style: none;
     display: flex;
     gap: 2px;
 }
+
 .nav-links a {
     color: var(--ink-soft);
     text-decoration: none;
@@ -134,10 +129,12 @@ header.hero, section, footer {
     border-radius: 999px;
     transition: all 0.3s ease;
 }
+
 .nav-links a:hover, .nav-links a.active {
     color: var(--accent-1);
     background: rgba(0, 245, 160, 0.06);
 }
+
 .nav-cta {
     background: #ffffff;
     color: #000000;
@@ -152,6 +149,7 @@ header.hero, section, footer {
     gap: 8px;
     transition: transform 0.3s ease;
 }
+
 .nav-cta:hover { transform: scale(1.03); }
 
 #nav {
@@ -170,6 +168,7 @@ header.hero, section, footer {
     justify-content: center;
     padding: 140px 0 60px 0;
 }
+
 .profile-image-wrapper {
     width: 310px;
     height: 380px;
@@ -180,6 +179,7 @@ header.hero, section, footer {
     background: var(--bg-2);
     will-change: transform, opacity;
 }
+
 .profile-img {
     width: 100%;
     height: 100%;
@@ -197,6 +197,7 @@ header.hero, section, footer {
     pointer-events: none;
     opacity: 0.018; 
 }
+
 .bg-text {
     font-weight: 900;
     font-size: clamp(120px, 18vw, 260px);
@@ -206,6 +207,7 @@ header.hero, section, footer {
     display: inline-block;
     animation: flowText 45s linear infinite;
 }
+
 @keyframes flowText {
     0% { transform: translateX(0%); }
     100% { transform: translateX(-50%); } 
@@ -216,8 +218,16 @@ header.hero, section, footer {
     position: relative;
     z-index: 10;
 }
+
 .glass-card {
-    background: #111827;
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0, 245, 160, 0.2);
 }
 
 /* FILTER PILLS STYLING ELEMENTS */
@@ -227,6 +237,7 @@ header.hero, section, footer {
     justify-content: center;
     gap: 10px;
 }
+
 .pill-btn, .cert-pill {
     background: #111827;
     border: 1px solid rgba(0, 245, 160, 0.12);
@@ -238,6 +249,7 @@ header.hero, section, footer {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 .pill-btn:hover, .pill-btn.active, .cert-pill:hover, .cert-pill.active {
     background: var(--accent-1) !important;
     color: #000000 !important;
@@ -249,10 +261,12 @@ header.hero, section, footer {
     background: #111827;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
 }
+
 .skill-node-card:hover {
     transform: scale(1.03) translateY(-4px);
     border-color: rgba(0, 245, 160, 0.25);
 }
+
 .badge {
     display: inline-block;
     background: rgba(0, 245, 160, 0.08);
@@ -262,6 +276,7 @@ header.hero, section, footer {
     font-size: 11px;
     font-weight: 700;
 }
+
 .tilt-card {
     background: #111827;
     border: 1px solid rgba(0, 245, 160, 0.05);
@@ -271,15 +286,18 @@ header.hero, section, footer {
 .timeline-section {
     padding: 90px 4%;
 }
+
 .timeline-tree-container {
     position: relative;
     padding-left: 36px;
     border-left: 2px solid rgba(0, 245, 160, 0.15);
 }
+
 .timeline-node-item {
     position: relative;
     margin-bottom: 36px;
 }
+
 .timeline-node-item::before {
     content: "";
     position: absolute;
@@ -293,6 +311,7 @@ header.hero, section, footer {
     box-shadow: 0 0 8px var(--accent-1);
     z-index: 5;
 }
+
 .timeline-badge-date {
     font-size: 11px;
     font-weight: 800;
@@ -309,11 +328,13 @@ header.hero, section, footer {
     padding: 100px 4%;
     background-color: #0d1322;
 }
+
 .symptoms-rows-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 28px;
 }
+
 .symptom-row-card {
     background: #111827;
     border: 1px solid rgba(0, 245, 160, 0.08);
@@ -338,6 +359,7 @@ header.hero, section, footer {
     position: relative;
     cursor: pointer;
 }
+
 .symptom-row-img img {
     width: 100%;
     height: 100%;
@@ -345,6 +367,7 @@ header.hero, section, footer {
     background-color: #0c1220;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .magnify-overlay {
     position: absolute;
     inset: 0;
@@ -364,9 +387,11 @@ header.hero, section, footer {
     border-color: rgba(0, 245, 160, 0.4) !important;
     box-shadow: 0 25px 50px rgba(0, 245, 160, 0.12);
 }
+
 .symptom-row-card:hover .symptom-row-img img {
     transform: scale(1.03);
 }
+
 .symptom-row-card:hover .magnify-overlay {
     opacity: 1;
 }
@@ -374,6 +399,7 @@ header.hero, section, footer {
 .symptom-row-content {
     padding: 26px;
 }
+
 .symptom-badge {
     display: inline-block;
     background: rgba(0, 245, 160, 0.06);
@@ -386,6 +412,7 @@ header.hero, section, footer {
     letter-spacing: 0.04em;
     margin-bottom: 12px;
 }
+
 .symptom-row-content h3 {
     font-size: 18px;
     margin-bottom: 10px;
@@ -393,6 +420,7 @@ header.hero, section, footer {
     line-height: 1.4;
     color: #ffffff;
 }
+
 .symptom-row-content p {
     font-size: 13.5px;
     line-height: 1.6;
@@ -411,18 +439,21 @@ header.hero, section, footer {
     .symptom-row-img { height: 280px; }
 }
 
-/* About Me Row Hover Animations */
+/* ============================================================
+   ADVANCED ABOUT ROW ANIMATIONS (Fixed & Merged)
+   ============================================================ */
 .about-row {
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    border: 1px solid transparent;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    border: 1px solid transparent !important;
+    border-radius: 12px !important;
+    padding: 12px !important; /* Forces the box to have padding for the highlight to look good */
     cursor: default;
 }
 
 .about-row:hover {
-    transform: translateX(10px); 
-    background-color: rgba(0, 245, 160, 0.03); 
-    border-color: rgba(0, 245, 160, 0.15); 
-    padding-left: 20px; 
+    transform: translateX(15px) scale(1.01) !important;
+    background-color: rgba(0, 245, 160, 0.06) !important;
+    border-color: rgba(0, 245, 160, 0.2) !important;
 }
 
 .about-row .row-text {
@@ -430,29 +461,11 @@ header.hero, section, footer {
 }
 
 .about-row:hover .row-text {
-    color: #ffffff; 
+    color: #ffffff !important;
 }
 
 .about-row:hover i {
-    transform: scale(1.1);
-    color: #ffffff;
-}
-
-/* Refined Card Styling */
-.glass-card {
-    background: rgba(17, 24, 39, 0.7);
-    backdrop-filter: blur(10px);
+    transform: scale(1.2) rotate(5deg);
+    color: #ffffff !important;
     transition: all 0.3s ease;
-}
-
-/* Add a subtle "shimmer" effect on hover */
-.glass-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px -10px rgba(0, 245, 160, 0.2);
-}
-
-/* Align text and icons better */
-.group:hover i {
-    transform: scale(1.2);
-    transition: transform 0.3s ease;
 }
