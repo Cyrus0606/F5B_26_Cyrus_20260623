@@ -100,49 +100,37 @@
                 <h2 class="text-3xl font-bold tracking-tight text-white border-b-2 border-[#00F5A0] inline-block pb-1 font-['Space_Grotesk']">About Me</h2>
             </div>
             
-            <div class="glass-card w-full p-8 space-y-6 rounded-2xl shadow-2xl border border-emerald-500/10">
-                <h3 class="text-xl font-bold text-white tracking-wide uppercase border-b border-emerald-500/10 pb-3 font-['Space_Grotesk']">INFORMATION</h3>
-                
-                <div class="space-y-2 text-base">
-                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
-                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-user w-5"></i> Name:</span>
-                        <span class="sm:col-span-3 text-slate-300 row-text">Cyrus Wong (Wong Wai Kuan)</span>
-                    </div>
-                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
-                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-calendar w-5"></i> Date of birth:</span>
-                        <span class="sm:col-span-3 text-slate-300 row-text">2009.06.06</span>
-                    </div>
-                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
-                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-star w-5"></i> Zodiac Sign:</span>
-                        <span class="sm:col-span-3 text-slate-300 row-text">Gemini</span>
-                    </div>
-                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
-                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-location-dot w-5"></i> Location:</span>
-                        <span class="sm:col-span-3 text-slate-300 row-text">Rua Central de Toi Sán, Macau</span>
-                    </div>
-                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
-                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-briefcase w-5"></i> Current Role:</span>
-                        <span class="sm:col-span-3 text-slate-300 row-text">Secondary Student (Science Class)</span>
-                    </div>
-                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
-                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-school w-5"></i> School:</span>
-                        <span class="sm:col-span-3 text-slate-300 row-text">Macau St. Joseph Diocesan College (The Fifth School)</span>
-                    </div>
-                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
-                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-language w-5"></i> Languages:</span>
-                        <span class="sm:col-span-3 text-slate-300 row-text">Cantonese, Mandarin, English</span>
-                    </div>
-                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 border-b border-emerald-500/5 px-3 rounded-lg">
-                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-bullseye w-5"></i> My Goals:</span>
-                        <span class="sm:col-span-3 text-slate-300 row-text">To pursue higher education in Computer Science, focusing on the intersection of Artificial Intelligence, Data Science, and software development. I aim to leverage my analytical skills to build efficient, intelligent tech solutions that address real-world challenges.</span>
-                    </div>
-                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-2 py-3 px-3 rounded-lg">
-                        <span class="font-bold text-[#00F5A0] flex items-center gap-2"><i class="fa-solid fa-quote-left w-5"></i> Motto:</span>
-                        <span class="sm:col-span-3 text-slate-300 row-text">"Failing to Prepare, Prepare to Fail."</span>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="glass-card p-8 rounded-2xl border border-emerald-500/10 hover:border-emerald-500/30 transition-all duration-300">
+        <h3 class="text-[#00F5A0] font-bold text-sm uppercase tracking-widest mb-6 font-['Space_Grotesk']">Personal Details</h3>
+        <div class="space-y-4">
+            <div class="flex items-start gap-4 group">
+                <div class="text-[#00F5A0] mt-1"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <p class="text-xs text-slate-500 uppercase">Name</p>
+                    <p class="text-white font-medium group-hover:text-[#00F5A0] transition-colors">Cyrus Wong</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 group">
+                <div class="text-[#00F5A0] mt-1"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                    <p class="text-xs text-slate-500 uppercase">Location</p>
+                    <p class="text-white font-medium">Macau</p>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="glass-card p-8 rounded-2xl border border-emerald-500/10 hover:border-emerald-500/30 transition-all duration-300">
+        <h3 class="text-[#00F5A0] font-bold text-sm uppercase tracking-widest mb-6 font-['Space_Grotesk']">Mission</h3>
+        <p class="text-slate-300 leading-relaxed text-sm">
+            To leverage analytical skills at the intersection of AI and Data Science. I aim to build intelligent solutions that solve real-world complexities through automated architecture.
+        </p>
+        <div class="mt-6 pt-4 border-t border-emerald-500/10">
+            <span class="text-[#00F5A0] text-xs font-bold italic">"Failing to Prepare, Prepare to Fail."</span>
+        </div>
+    </div>
+</div>
     </section>
 
     <section class="split-section relative z-10" id="hobbies">
