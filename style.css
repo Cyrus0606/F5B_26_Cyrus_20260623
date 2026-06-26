@@ -437,3 +437,22 @@ header.hero, section, footer {
     transform: scale(1.1);
     color: #ffffff;
 }
+
+/* Refined Card Styling */
+.glass-card {
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+/* Add a subtle "shimmer" effect on hover */
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0, 245, 160, 0.2);
+}
+
+/* Align text and icons better */
+.group:hover i {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
