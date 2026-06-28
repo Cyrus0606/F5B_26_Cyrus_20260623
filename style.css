@@ -469,3 +469,14 @@ header.hero, section, footer {
     color: #ffffff !important;
     transition: all 0.3s ease;
 }
+
+/* Typing Preloader Cursor */
+#typed-text::after { 
+    content: '|'; 
+    animation: blink 0.8s infinite; 
+    margin-left: 5px;
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* Ensure elements are hidden until GSAP reveals them */
+#nav, .hero .grid > div, #flyInPortrait { opacity: 0; }
