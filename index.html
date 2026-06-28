@@ -21,7 +21,7 @@
 <body class="text-[#cbd5e1] antialiased overflow-hidden">
 
     <div id="preloader" class="fixed inset-0 z-[200] bg-[#0b0f19] flex items-center justify-center">
-        <div class="text-[#00F5A0] text-3xl font-bold tracking-widest animate-pulse">CYRUS.W</div>
+        <div id="typed-text" class="text-[#00F5A0] text-3xl font-bold tracking-widest font-['Space_Grotesk']"></div>
     </div>
 
     <div id="tsparticles" class="fixed inset-0 z-0 pointer-events-none"></div>
@@ -1050,48 +1050,46 @@
         // --- INITIALIZE PARTICLES ---
         tsParticles.load("tsparticles", {
             particles: {
-                number: { value: 60 },
-                color: { value: "#00F5A0" },
-                shape: { type: "circle" },
-                opacity: { value: 0.3 },
-                size: { value: 2 },
-                move: {
-                    enable: true,
-                    speed: 1,
-                    direction: "none",
-                    outModes: { default: "out" }
-                },
-                links: {
-                    enable: true,
-                    distance: 150,
-                    color: "#00F5A0",
-                    opacity: 0.15,
-                    width: 1
-                }
+                number: { value: 60 }, color: { value: "#00F5A0" }, shape: { type: "circle" },
+                opacity: { value: 0.3 }, size: { value: 2 },
+                move: { enable: true, speed: 1, direction: "none", outModes: { default: "out" } },
+                links: { enable: true, distance: 150, color: "#00F5A0", opacity: 0.15, width: 1 }
             },
-            interactivity: {
-                events: {
-                    onHover: { enable: true, mode: "grab" }
-                }
-            }
+            interactivity: { events: { onHover: { enable: true, mode: "grab" } } }
         });
 
-        // --- ENTRANCE ANIMATIONS & PRELOADER ---
+        // --- TYPED PRELOADER & ENTRANCE ---
+        const typedText = document.getElementById("typed-text");
+        const fullText = "CYRUS.W_";
+        const preloader = document.getElementById("preloader");
+        
+        // Setup initial states
         gsap.set("#nav", { opacity: 0, y: -24 });
-        gsap.set("#subline", { opacity: 0, y: 24 });
         gsap.set("#flyInPortrait", { x: "170%", opacity: 0, scale: 0.85 });
         gsap.set(".hero .grid > div", { opacity: 0, y: 35 });
 
-        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-            tl.to("#preloader", { opacity: 0, duration: 0.5, delay: 0.3, onComplete: () => {
-            document.getElementById("preloader").style.display = "none";
-            document.body.classList.remove("overflow-hidden"); 
+        const tl = gsap.timeline();
+        
+        // 1. Typing effect (Fast)
+        tl.to({ val: 0 }, { 
+            val: fullText.length, 
+            duration: 0.7, 
+            onUpdate: function() { 
+                typedText.innerText = fullText.substring(0, Math.floor(this.targets()[0].val)); 
+            }, 
+            ease: "none" 
+        })
+        // 2. Hide Preloader quickly
+        .to(preloader, { opacity: 0, duration: 0.3, delay: 0.2, onComplete: () => {
+            preloader.style.display = "none";
+            document.body.classList.remove("overflow-hidden");
         }})
-        .to("#nav", { opacity: 1, y: 0, duration: 0.8 }, "-=0.2")
-        .to("#flyInPortrait", { x: "0%", opacity: 1, scale: 1, duration: 0.8 }, "-=0.5")
-        .to(".hero .grid > div", { opacity: 1, y: 0, duration: 0.8, stagger: 0.1 }, "-=0.6");
+        // 3. Entrance sequence (Tighter timing)
+        .to("#nav", { opacity: 1, y: 0, duration: 0.6 }, "-=0.2")
+        .to("#flyInPortrait", { x: "0%", opacity: 1, scale: 1, duration: 0.7 }, "-=0.4")
+        .to(".hero .grid > div", { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 }, "-=0.5");
 
-        // --- NAVIGATION HANDLING ---
+        // --- NAVIGATION, GSAP REVEALS & TILT ---
         const menuLinks = document.querySelectorAll(".nav-links a, .logo");
         menuLinks.forEach(link => {
             link.addEventListener("click", (e) => {
@@ -1100,60 +1098,34 @@
                     e.preventDefault();
                     const nodeElement = document.querySelector(destinationPath);
                     if (nodeElement) {
-                        gsap.to(window, {
-                            duration: 1.2,
-                            scrollTo: { y: nodeElement, offsetY: destinationPath === "#contact-footer" ? 0 : 75 },
-                            ease: "power4.inOut"
-                        });
+                        gsap.to(window, { duration: 1.2, scrollTo: { y: nodeElement, offsetY: destinationPath === "#contact-footer" ? 0 : 75 }, ease: "power4.inOut" });
                     }
                 }
             });
         });
 
-        // --- GSAP REVEALS & TILT ---
         document.querySelectorAll(".gs-reveal").forEach((element) => {
-            gsap.fromTo(element, 
-                { opacity: 0, y: 35 }, 
-                { scrollTrigger: { trigger: element, start: "top 92%", toggleActions: "play none none none" }, opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
-            );
+            gsap.fromTo(element, { opacity: 0, y: 35 }, { scrollTrigger: { trigger: element, start: "top 92%" }, opacity: 1, y: 0, duration: 0.8, ease: "power2.out" });
         });
 
         document.querySelectorAll(".tilt-card").forEach((card) => {
             card.addEventListener("mousemove", (e) => {
-                const bounds = card.getBoundingClientRect();
-                const axisX = (e.clientX - bounds.left) / bounds.width - 0.5;
-                const axisY = (e.clientY - bounds.top) / bounds.height - 0.5;
-                gsap.to(card, { rotateX: -axisY * 12, rotateY: axisX * 12, duration: 0.35, ease: "power2.out", transformPerspective: 900, overwrite: "auto" });
+                const b = card.getBoundingClientRect();
+                gsap.to(card, { rotateX: -((e.clientY - b.top) / b.height - 0.5) * 12, rotateY: ((e.clientX - b.left) / b.width - 0.5) * 12, duration: 0.3, transformPerspective: 900 });
             });
-            card.addEventListener("mouseleave", () => {
-                gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.7, ease: "elastic.out(1, 0.6)", overwrite: "auto" });
-            });
+            card.addEventListener("mouseleave", () => gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.7 }));
         });
 
-        // --- 证书排序（页面加载时执行一次） ---
         sortCertificates();
-    }); // end window.load
+    });
 
-    // ========== 证书排序与过滤函数 ==========
-    // 按 data-priority 升序排列（数值越小越靠前）
+    // --- HELPER FUNCTIONS ---
     function sortCertificates() {
         const container = document.getElementById('certsContainer');
         if (!container) return;
         const cards = Array.from(container.querySelectorAll('.cert-grid-card'));
-        // 只排序可见的卡片（display !== 'none'）
-        const visible = cards.filter(c => c.style.display !== 'none');
-        const hidden = cards.filter(c => c.style.display === 'none');
-
-        visible.sort((a, b) => {
-            const pa = parseInt(a.dataset.priority) || 999;
-            const pb = parseInt(b.dataset.priority) || 999;
-            return pa - pb;
-        });
-
-        // 重新插入：先放排序后的可见卡片，再放隐藏的（保持隐藏）
-        container.innerHTML = '';
-        visible.forEach(c => container.appendChild(c));
-        hidden.forEach(c => container.appendChild(c));
+        cards.sort((a, b) => (parseInt(a.dataset.priority) || 999) - (parseInt(b.dataset.priority) || 999));
+        cards.forEach(c => container.appendChild(c));
     }
 
     // 过滤证书（保留排序）
