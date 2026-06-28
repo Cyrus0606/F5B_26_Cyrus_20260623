@@ -73,6 +73,7 @@
             <div class="bg-text">
                 NOTHING IS IMPOSSIBLE &nbsp; NOTHING IS IMPOSSIBLE &nbsp; NOTHING IS IMPOSSIBLE &nbsp; ;
             </div>
+            
         </div>
 
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 px-4">
@@ -429,6 +430,7 @@
         </div>
     </section>
 
+    <!-- 证书区域 - 已添加 data-priority 和动画类 -->
     <section class="team-section relative z-10" id="certificate">
         <div class="max-w-7xl mx-auto w-full gs-reveal">
             <div class="team-head text-center">
@@ -444,68 +446,8 @@
             </div>
 
             <div class="symptoms-rows-container" id="certsContainer">
-                
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/FISO_IT.jpg" alt="FISO Digital Tech">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Information Technology</div>
-                        <h3 class="text-white">Future Intelligence Students Olympiad — Digital Technology</h3>
-                        <p>Awarded the Silver Medal placement evaluating computing parameters, automated networks logic, and code optimization parameters.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/FISO_math.jpg" alt="FISO Math">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Future Intelligence Students Olympiad — Mathematics</h3>
-                        <p>Achieved Bronze Medal recognition evaluating advanced numerical data arrays, combinatorics sequences, and logic metrics.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/FMO.jpg" alt="Fermat Math">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Fermat Mathematical Olympiad National Round</h3>
-                        <p>Secured Bronze Medal metrics analyzing theoretical algebra transformations, functions routing, and numerical proofs.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/alice.jpg" alt="Macao IT AI Contest">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Information Technology</div>
-                        <h3 class="text-white">17th Macao-wide IT Competition — AI Creation Category</h3>
-                        <p>Earned the Merit Award for structural excellence inside localized 3D scripting tracks and artificial intelligence design tools.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/best_delegate.jpg" alt="MUN Award">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Greater Bay Area International Model United Nations</h3>
-                        <p>Awarded top honors as Best Delegate for executing complex international policy simulations and multi-party solution drafts.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                <!-- 按优先级排序：MOIS(1) → MOIJ(2) → 其他IT(3) → MOS(4) → Others(5) -->
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="1">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
                         <img src="cert/MOIS.jpg" alt="MOI Senior">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
@@ -517,79 +459,7 @@
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/singapore_global.jpg" alt="Singapore Finals">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Singapore Math Global Finals Competition</h3>
-                        <p>Earned Certificate of Participation competing internationally across core spatial tracking and combinatorial mathematics puzzles.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/phy_comp.jpg" alt="Physics Gold">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">International Children and Youth Physics Competition</h3>
-                        <p>Awarded absolute Gold Medal rating evaluating mechanical force balances, structural kinetics, and thermodynamic equations.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/chem_comp.jpg" alt="Chemistry Gold">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">International Children and Youth Chemistry Competition</h3>
-                        <p>Secured Gold Medal parameters testing acid-base calculations matrices, organic properties analysis, and elemental compounds datasets.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/bio_comp.jpg" alt="Biology Special">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">International Children and Youth Biology Competition</h3>
-                        <p>Earned premium Special Gold Medal metric tracking micro-cellular anatomy logs and structural inheritance sequence arrays.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/phy_bowl.jpg" alt="Asia Physics">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Asia Physics Bowl Challenge Tournament</h3>
-                        <p>Ranked First Runner Up overall analyzing advanced electromagnetic flux vectors and momentum matrix distribution mechanics.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/singapore_macau.jpg" alt="SMC Math">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Singapore Math Challenge Profile</h3>
-                        <p>Honored with the Commendable Award index solving complex equation structures and abstract discrete logic transforms.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="2">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
                         <img src="cert/MOIJ.jpg" alt="MOI Junior Category">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
@@ -601,7 +471,31 @@
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="3">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/FISO_IT.jpg" alt="FISO Digital Tech">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">Future Intelligence Students Olympiad — Digital Technology</h3>
+                        <p>Awarded the Silver Medal placement evaluating computing parameters, automated networks logic, and code optimization parameters.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="3">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/alice.jpg" alt="Macao IT AI Contest">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">17th Macao-wide IT Competition — AI Creation Category</h3>
+                        <p>Earned the Merit Award for structural excellence inside localized 3D scripting tracks and artificial intelligence design tools.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="3">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
                         <img src="cert/robofest.jpg" alt="Robofest Gold">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
@@ -613,7 +507,7 @@
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="3">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
                         <img src="cert/cyber.jpg" alt="Qianxin Tech">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
@@ -625,19 +519,7 @@
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/NCTE.jpg" alt="English NCE">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">New Concept Tests of English (Level 5)</h3>
-                        <p>Achieved verified 'Good' proficiency index tracking complex technical text evaluation, processing rules, and literacy syntax tracks.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="3">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
                         <img src="cert/python_cert_edit.jpg" alt="CIE Level 1">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
@@ -649,163 +531,7 @@
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/excel_asso.jpg" alt="MOS Excel Associate">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Microsoft Office Specialists</div>
-                        <h3 class="text-white">Microsoft Office Specialist — Excel 365 Associate</h3>
-                        <p>Certified spreadsheet data modeling capability including standard formulas deployment, chart structuring, and worksheets management.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/excel_expert.jpg" alt="MOS Excel Expert">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Microsoft Office Specialists</div>
-                        <h3 class="text-white">Microsoft Office Specialist — Excel 365 Expert</h3>
-                        <p>Advanced system credential validating deployment of intricate logical calculation formulas, workbook macro automation, and nested lookup matrices.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/word_asso.jpg" alt="MOS Word Associate">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Microsoft Office Specialists</div>
-                        <h3 class="text-white">Microsoft Office Specialist — Word 365 Associate</h3>
-                        <p>Validation of semantic document generation, formatting guidelines compliance, table indexing, and page flow configuration rules.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/word_expert.jpg" alt="MOS Word Expert">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Microsoft Office Specialists</div>
-                        <h3 class="text-white">Microsoft Office Specialist — Word 365 Expert</h3>
-                        <p>Professional configuration certification mapping advanced layout reference tools, custom template controls, and variable integration macros.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/ppt_asso.jpg" alt="MOS PowerPoint">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Microsoft Office Specialists</div>
-                        <h3 class="text-white">Microsoft Office Specialist — PowerPoint 365</h3>
-                        <p>Certified operational validation for slide show asset mapping, advanced presentation timeline structures, and multimedia asset compilation.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/mos_asso.jpg" alt="MOS Asso">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Microsoft Office Specialists</div>
-                        <h3 class="text-white">Microsoft Office Specialist — Associate (M365 Apps)</h3>
-                        <p>Validates professional-grade core proficiency in digital workflows across Microsoft Excel, Word, and PowerPoint packages.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="mos">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/mos_expert.jpg" alt="MOS Expert">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Microsoft Office Specialists</div>
-                        <h3 class="text-white">Microsoft Office Specialist — Expert (M365 Apps)</h3>
-                        <p>Certifies advanced mastery and highest-tier technical skills in complex data modeling, automated scripting, and advanced architecture layout tracks.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/4by4_fourth.jpg" alt="Track and Field Relays">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">47th Macau Inter-School Athletics Championship</h3>
-                        <p>Competing in the highly competitive division, my team and I secured an impressive 4th-place finish in the 4*400m relay event matrix.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/4by4_7th.jpg" alt="Relay Heats">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">48th Macau Inter-School Athletics Championship</h3>
-                        <p>Successfully fought through the heats to secure a 7th-place finish in the finals, maintaining our standing among the top relay squads across the district track parameters.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/4by1_8th.jpg" alt="Relay Sprint">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">49th Macau Inter-School Athletics Championship</h3>
-                        <p>Testing explosive speed and baton-passing precision, I competed in the 4*100m sprint relay, earning an 8th-place finish overall within macro competition tiers.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/academic.jpg" alt="Scholastic Award">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Academic Achievement — First Prize</h3>
-                        <p>Awarded First Prize for outstanding scholastic achievement across natural sciences, math matrices, and algorithmic logic categories.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/student_union.jpg" alt="Student Union Cert">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Student Union Financial Department — Outstanding Performance</h3>
-                        <p>Honored for outstanding leadership, accounting audits, and financial resource allocation tracking as an active executive member.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/science_scholarship.jpg" alt="Macau Foundation Scholarship">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Macau Foundation Award for Excellence in Science and Technology (2024/2025)</h3>
-                        <p>Recipient of the prestigious government-backed Macau Foundation Prize. Awarded for achieving the 1st place ranking across all science stream disciplines, including Physics, Chemistry, Biology, and Information Technology.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="it">
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="3">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
                         <img src="cert/cpttm_mos.jpg" alt="CPTTM Micro Event">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
@@ -817,7 +543,285 @@
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card border border-emerald-500/10" data-cert-cat="others">
+                <!-- MOS 类证书 (优先级 4) -->
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/excel_asso.jpg" alt="MOS Excel Associate">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Excel 365 Associate</h3>
+                        <p>Certified spreadsheet data modeling capability including standard formulas deployment, chart structuring, and worksheets management.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/excel_expert.jpg" alt="MOS Excel Expert">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Excel 365 Expert</h3>
+                        <p>Advanced system credential validating deployment of intricate logical calculation formulas, workbook macro automation, and nested lookup matrices.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/word_asso.jpg" alt="MOS Word Associate">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Word 365 Associate</h3>
+                        <p>Validation of semantic document generation, formatting guidelines compliance, table indexing, and page flow configuration rules.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/word_expert.jpg" alt="MOS Word Expert">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Word 365 Expert</h3>
+                        <p>Professional configuration certification mapping advanced layout reference tools, custom template controls, and variable integration macros.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/ppt_asso.jpg" alt="MOS PowerPoint">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — PowerPoint 365</h3>
+                        <p>Certified operational validation for slide show asset mapping, advanced presentation timeline structures, and multimedia asset compilation.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/mos_asso.jpg" alt="MOS Asso">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Associate (M365 Apps)</h3>
+                        <p>Validates professional-grade core proficiency in digital workflows across Microsoft Excel, Word, and PowerPoint packages.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/mos_expert.jpg" alt="MOS Expert">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Expert (M365 Apps)</h3>
+                        <p>Certifies advanced mastery and highest-tier technical skills in complex data modeling, automated scripting, and advanced architecture layout tracks.</p>
+                    </div>
+                </div>
+
+                <!-- Others 类证书 (优先级 5) -->
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/FISO_math.jpg" alt="FISO Math">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Future Intelligence Students Olympiad — Mathematics</h3>
+                        <p>Achieved Bronze Medal recognition evaluating advanced numerical data arrays, combinatorics sequences, and logic metrics.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/FMO.jpg" alt="Fermat Math">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Fermat Mathematical Olympiad National Round</h3>
+                        <p>Secured Bronze Medal metrics analyzing theoretical algebra transformations, functions routing, and numerical proofs.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/best_delegate.jpg" alt="MUN Award">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Greater Bay Area International Model United Nations</h3>
+                        <p>Awarded top honors as Best Delegate for executing complex international policy simulations and multi-party solution drafts.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/singapore_global.jpg" alt="Singapore Finals">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Singapore Math Global Finals Competition</h3>
+                        <p>Earned Certificate of Participation competing internationally across core spatial tracking and combinatorial mathematics puzzles.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/phy_comp.jpg" alt="Physics Gold">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">International Children and Youth Physics Competition</h3>
+                        <p>Awarded absolute Gold Medal rating evaluating mechanical force balances, structural kinetics, and thermodynamic equations.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/chem_comp.jpg" alt="Chemistry Gold">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">International Children and Youth Chemistry Competition</h3>
+                        <p>Secured Gold Medal parameters testing acid-base calculations matrices, organic properties analysis, and elemental compounds datasets.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/bio_comp.jpg" alt="Biology Special">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">International Children and Youth Biology Competition</h3>
+                        <p>Earned premium Special Gold Medal metric tracking micro-cellular anatomy logs and structural inheritance sequence arrays.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/phy_bowl.jpg" alt="Asia Physics">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Asia Physics Bowl Challenge Tournament</h3>
+                        <p>Ranked First Runner Up overall analyzing advanced electromagnetic flux vectors and momentum matrix distribution mechanics.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/singapore_macau.jpg" alt="SMC Math">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Singapore Math Challenge Profile</h3>
+                        <p>Honored with the Commendable Award index solving complex equation structures and abstract discrete logic transforms.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/NCTE.jpg" alt="English NCE">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">New Concept Tests of English (Level 5)</h3>
+                        <p>Achieved verified 'Good' proficiency index tracking complex technical text evaluation, processing rules, and literacy syntax tracks.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/4by4_fourth.jpg" alt="Track and Field Relays">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">47th Macau Inter-School Athletics Championship</h3>
+                        <p>Competing in the highly competitive division, my team and I secured an impressive 4th-place finish in the 4*400m relay event matrix.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/4by4_7th.jpg" alt="Relay Heats">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">48th Macau Inter-School Athletics Championship</h3>
+                        <p>Successfully fought through the heats to secure a 7th-place finish in the finals, maintaining our standing among the top relay squads across the district track parameters.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/4by1_8th.jpg" alt="Relay Sprint">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">49th Macau Inter-School Athletics Championship</h3>
+                        <p>Testing explosive speed and baton-passing precision, I competed in the 4*100m sprint relay, earning an 8th-place finish overall within macro competition tiers.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/academic.jpg" alt="Scholastic Award">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Academic Achievement — First Prize</h3>
+                        <p>Awarded First Prize for outstanding scholastic achievement across natural sciences, math matrices, and algorithmic logic categories.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/student_union.jpg" alt="Student Union Cert">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Student Union Financial Department — Outstanding Performance</h3>
+                        <p>Honored for outstanding leadership, accounting audits, and financial resource allocation tracking as an active executive member.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/science_scholarship.jpg" alt="Macau Foundation Scholarship">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Macau Foundation Award for Excellence in Science and Technology (2024/2025)</h3>
+                        <p>Recipient of the prestigious government-backed Macau Foundation Prize. Awarded for achieving the 1st place ranking across all science stream disciplines, including Physics, Chemistry, Biology, and Information Technology.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
                         <img src="cert/lit_his_geog_edit.jpg" alt="lit-his-geog">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
@@ -1079,15 +1083,13 @@
         gsap.set(".hero .grid > div", { opacity: 0, y: 35 });
 
         const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-        
-        tl.to("#preloader", { opacity: 0, duration: 0.8, delay: 0.5, onComplete: () => {
+            tl.to("#preloader", { opacity: 0, duration: 0.5, delay: 0.3, onComplete: () => {
             document.getElementById("preloader").style.display = "none";
-            document.body.classList.remove("overflow-hidden"); // Restores scroll
+            document.body.classList.remove("overflow-hidden"); 
         }})
-        .to("#nav", { opacity: 1, y: 0, duration: 1.0 }, "-=0.4")
-        .to("#flyInPortrait", { x: "0%", opacity: 1, scale: 1, duration: 1.4 }, "-=0.8")
-        .to(".hero .grid > div", { opacity: 1, y: 0, duration: 1.0, stagger: 0.2 }, "-=1.0")
-        .to("#subline", { opacity: 1, y: 0, duration: 1.0 }, "-=1.2");
+        .to("#nav", { opacity: 1, y: 0, duration: 0.8 }, "-=0.2")
+        .to("#flyInPortrait", { x: "0%", opacity: 1, scale: 1, duration: 0.8 }, "-=0.5")
+        .to(".hero .grid > div", { opacity: 1, y: 0, duration: 0.8, stagger: 0.1 }, "-=0.6");
 
         // --- NAVIGATION HANDLING ---
         const menuLinks = document.querySelectorAll(".nav-links a, .logo");
@@ -1127,9 +1129,65 @@
                 gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.7, ease: "elastic.out(1, 0.6)", overwrite: "auto" });
             });
         });
-    }); // <-- End of window.load
 
-    // --- HELPER FUNCTIONS ---
+        // --- 证书排序（页面加载时执行一次） ---
+        sortCertificates();
+    }); // end window.load
+
+    // ========== 证书排序与过滤函数 ==========
+    // 按 data-priority 升序排列（数值越小越靠前）
+    function sortCertificates() {
+        const container = document.getElementById('certsContainer');
+        if (!container) return;
+        const cards = Array.from(container.querySelectorAll('.cert-grid-card'));
+        // 只排序可见的卡片（display !== 'none'）
+        const visible = cards.filter(c => c.style.display !== 'none');
+        const hidden = cards.filter(c => c.style.display === 'none');
+
+        visible.sort((a, b) => {
+            const pa = parseInt(a.dataset.priority) || 999;
+            const pb = parseInt(b.dataset.priority) || 999;
+            return pa - pb;
+        });
+
+        // 重新插入：先放排序后的可见卡片，再放隐藏的（保持隐藏）
+        container.innerHTML = '';
+        visible.forEach(c => container.appendChild(c));
+        hidden.forEach(c => container.appendChild(c));
+    }
+
+    // 过滤证书（保留排序）
+    window.filterCertificates = function(targetCategory) {
+        // 更新按钮激活状态
+        document.querySelectorAll('.cert-pill').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${targetCategory}'`));
+        });
+
+        const container = document.getElementById('certsContainer');
+        const cards = Array.from(container.querySelectorAll('.cert-grid-card'));
+
+        // 先根据类别显示/隐藏
+        cards.forEach(card => {
+            const cat = card.dataset.certCat;
+            if (targetCategory === 'all' || cat === targetCategory) {
+                card.style.display = 'flex'; // 或 'block'，取决于布局
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // 然后排序（只排可见的）
+        sortCertificates();
+
+        // 最后对可见卡片做入场动画
+        const visibleCards = Array.from(container.querySelectorAll('.cert-grid-card')).filter(c => c.style.display !== 'none');
+        gsap.fromTo(visibleCards, 
+            { opacity: 0, y: 20, scale: 0.95 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.04, ease: "power3.out", overwrite: "auto" }
+        );
+    };
+
+    // --- 原有 filterSkills（保持不变） ---
     window.filterSkills = function(targetCategory) {
         document.querySelectorAll('#skills .pill-btn').forEach(btn => {
             btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${targetCategory}'`));
@@ -1146,22 +1204,7 @@
         gsap.fromTo(activeNodes, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.04, ease: "power2.out", overwrite: "auto" });
     };
 
-    window.filterCertificates = function(targetCategory) {
-        document.querySelectorAll('.cert-pill').forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${targetCategory}'`));
-        });
-
-        const targets = [], hidden = [];
-        document.querySelectorAll('.cert-grid-card').forEach(card => {
-            (targetCategory === 'all' || card.getAttribute('data-cert-cat') === targetCategory) 
-                ? targets.push(card) : hidden.push(card);
-        });
-
-        gsap.set(hidden, { display: 'none', opacity: 0, scale: 0.95 });
-        gsap.set(targets, { display: 'flex' });
-        gsap.fromTo(targets, { opacity: 0, y: 20, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.04, ease: "power3.out", overwrite: "auto" });
-    };
-
+    // --- 灯箱函数 ---
     window.openLightbox = function(containerElement) {
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
@@ -1176,6 +1219,7 @@
         document.getElementById('lightbox').classList.add('hidden', 'opacity-0');
     };
 
+    // --- 移动端菜单 ---
     const hamburger = document.getElementById('hamburger');
     const closeMenu = document.getElementById('close-menu');
     const mobileMenu = document.getElementById('mobile-menu');
