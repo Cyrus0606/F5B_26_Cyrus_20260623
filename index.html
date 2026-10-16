@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyrus Wong | Personal Website</title>
-    
+    <title>Cyrus Wong | Data Science & Programming Student Portfolio — Macau</title>
+    <meta name="description" content="Cyrus Wong is a Macau secondary science student specializing in Python, C++, data science, and AI. IELTS 7.5, MOI Bronze, Macau Foundation Science & Technology Award.">
+    <link rel="canonical" href="https://example.com/">
+    <meta property="og:title" content="Cyrus Wong | Data Science & Programming Student Portfolio">
+    <meta property="og:description" content="Macau student specializing in Python, C++, data science, and AI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:image" content="https://example.com/me.png">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
@@ -12,13 +20,55 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
+
+    <script type="module">
+        try {
+            const mod = await import("https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm");
+            window.Motion = { animate: mod.animate };
+        } catch (e) {
+            window.Motion = null;
+        }
+        window.dispatchEvent(new Event('motion-ready'));
+    </script>
+
+    <style>
+        .cert-grid-card.is-hidden,
+        .skill-node-card.is-hidden {
+            display: none !important;
+        }
+        .anim-pre {
+            opacity: 0;
+            transform: translateY(50px) scale(0.88);
+            will-change: opacity, transform;
+        }
+        .anim-pre-x {
+            opacity: 0;
+            transform: translateX(-50px) translateY(40px) scale(0.88);
+            will-change: opacity, transform;
+        }
+        .anim-pre-xr {
+            opacity: 0;
+            transform: translateX(50px) translateY(40px) scale(0.88);
+            will-change: opacity, transform;
+        }
+        .char {
+            display: inline-block;
+            will-change: opacity, transform;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .anim-pre, .anim-pre-x, .anim-pre-xr {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
 </head>
-<body class="text-[#cbd5e1] antialiased overflow-hidden">
+<body class="text-[#cbd5e1] antialiased overflow-x-hidden">
 
     <div id="preloader" class="fixed inset-0 z-[200] bg-[#0b0f19] flex items-center justify-center">
         <div id="typed-text" class="text-[#00F5A0] text-3xl font-bold tracking-widest font-['Space_Grotesk']"></div>
@@ -28,52 +78,52 @@
 
     <div class="grain"></div>
 
-    <div id="lightbox" onclick="closeLightboxFunc()" class="fixed inset-0 z-[100] hidden bg-[#0b0f19]/95 backdrop-blur-md flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 cursor-pointer">
-        <button id="closeLightbox" onclick="closeLightboxFunc()" class="absolute top-6 right-8 text-white text-5xl font-light hover:text-[#00F5A0] transition-colors focus:outline-none">&times;</button>
-        <img id="lightboxImg" src="" class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl border border-[#00F5A0]/20 transform scale-95 transition-transform duration-300">
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Certificate preview"
+         class="fixed inset-0 z-[100] hidden bg-[#0b0f19]/95 backdrop-blur-md flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 cursor-pointer">
+        <button id="closeLightbox" aria-label="Close preview"
+                class="absolute top-6 right-8 text-white text-5xl font-light hover:text-[#00F5A0] transition-colors cursor-pointer z-10">&times;</button>
+        <img id="lightboxImg" src="" alt="Certificate preview"
+             class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl border border-[#00F5A0]/20 transform scale-95 transition-transform duration-300">
     </div>
 
     <nav id="nav" class="fixed w-full z-50 px-8 py-4 flex items-center justify-between">
-    <div class="logo font-bold text-xl text-[#00F5A0] cursor-pointer">CYRUS.W</div>
-    
-    <ul class="nav-links hidden md:flex items-center gap-8 ml-auto">
-        <li><a href="#home" class="text-white hover:text-[#00F5A0]">Home</a></li>
-        <li><a href="#about" class="text-white hover:text-[#00F5A0]">About</a></li>
-        <li><a href="#hobbies" class="text-white hover:text-[#00F5A0]">Hobbies</a></li>
-        <li><a href="#skills" class="text-white hover:text-[#00F5A0]">Skills</a></li>
-        <li><a href="#experiences" class="text-white hover:text-[#00F5A0]">Experiences</a></li>
-        <li><a href="#certificate" class="text-white hover:text-[#00F5A0]">Certificate</a></li>
-        <li><a href="#projects" class="text-white hover:text-[#00F5A0]">Projects</a></li>
-        <li><a href="#contact-footer" class="text-white hover:text-[#00F5A0]">Contact</a></li>
-    </ul>
+        <div class="logo font-bold text-xl text-[#00F5A0] cursor-pointer">CYRUS.W</div>
+        <ul class="nav-links hidden md:flex items-center gap-8 ml-auto">
+            <li><a href="#home" class="text-white hover:text-[#00F5A0]">Home</a></li>
+            <li><a href="#about" class="text-white hover:text-[#00F5A0]">About</a></li>
+            <li><a href="#hobbies" class="text-white hover:text-[#00F5A0]">Hobbies</a></li>
+            <li><a href="#skills" class="text-white hover:text-[#00F5A0]">Skills</a></li>
+            <li><a href="#experiences" class="text-white hover:text-[#00F5A0]">Experiences</a></li>
+            <li><a href="#certificate" class="text-white hover:text-[#00F5A0]">Certificate</a></li>
+            <li><a href="#projects" class="text-white hover:text-[#00F5A0]">Projects</a></li>
+            <li><a href="#contact-footer" class="text-white hover:text-[#00F5A0]">Contact</a></li>
+        </ul>
+        <button id="hamburger" aria-label="Open menu" class="md:hidden text-[#00F5A0] text-2xl">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
 
-    <button id="hamburger" class="md:hidden text-[#00F5A0] text-2xl">
-        <i class="fa-solid fa-bars"></i>
-    </button>
-</nav>
-
-<div id="mobile-menu" class="fixed inset-0 bg-[#0b0f19]/95 z-[100] hidden flex-col items-center justify-center gap-8">
-    <button id="close-menu" class="absolute top-8 right-8 text-[#00F5A0] text-4xl p-4">
-        <i class="fa-solid fa-xmark"></i>
-    </button>
-    <ul class="text-center space-y-8 text-2xl">
-        <li><a href="#home" class="mobile-link text-white">Home</a></li>
-        <li><a href="#about" class="mobile-link text-white">About</a></li>
-        <li><a href="#hobbies" class="mobile-link text-white">Hobbies</a></li>
-        <li><a href="#skills" class="mobile-link text-white">Skills</a></li>
-        <li><a href="#experiences" class="mobile-link text-white">Experiences</a></li>
-        <li><a href="#certificate" class="mobile-link text-white">Certificate</a></li>
-        <li><a href="#projects" class="mobile-link text-white">Projects</a></li>
-        <li><a href="#contact-footer" class="mobile-link text-white">Contact</a></li>
-    </ul>
-</div>
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0b0f19]/95 z-[100] hidden flex-col items-center justify-center gap-8">
+        <button id="close-menu" aria-label="Close menu" class="absolute top-8 right-8 text-[#00F5A0] text-4xl p-4">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="text-center space-y-8 text-2xl">
+            <li><a href="#home" class="mobile-link text-white">Home</a></li>
+            <li><a href="#about" class="mobile-link text-white">About</a></li>
+            <li><a href="#hobbies" class="mobile-link text-white">Hobbies</a></li>
+            <li><a href="#skills" class="mobile-link text-white">Skills</a></li>
+            <li><a href="#experiences" class="mobile-link text-white">Experiences</a></li>
+            <li><a href="#certificate" class="mobile-link text-white">Certificate</a></li>
+            <li><a href="#projects" class="mobile-link text-white">Projects</a></li>
+            <li><a href="#contact-footer" class="mobile-link text-white">Contact</a></li>
+        </ul>
+    </div>
 
     <header class="hero relative z-10" id="home">
         <div class="bg-text-wrap">
             <div class="bg-text">
                 NOTHING IS IMPOSSIBLE &nbsp; NOTHING IS IMPOSSIBLE &nbsp; NOTHING IS IMPOSSIBLE &nbsp; ;
             </div>
-            
         </div>
 
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 px-4">
@@ -85,69 +135,74 @@
                 <p class="text-slate-400 max-w-xl text-lg">
                     A secondary school science student and programmer specializing in data science, predictive analytics, and automated data architectures to solve complex analytical problems.
                 </p>
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <a href="#projects" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#00F5A0] text-[#0b0f19] font-bold text-sm hover:bg-[#00b876] transition">
+                        <i class="fa-solid fa-code"></i> View Projects
+                    </a>
+                    <a href="#certificate" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#00F5A0]/40 text-[#00F5A0] font-bold text-sm hover:bg-[#00F5A0]/10 transition">
+                        <i class="fa-solid fa-award"></i> View Credentials
+                    </a>
+                </div>
             </div>
-            
             <div class="lg:col-span-5 flex justify-center lg:justify-end overflow-visible">
                 <div id="flyInPortrait" class="profile-image-wrapper">
-                    <img src="me.png" alt="Cyrus Wong" class="profile-img">
+                    <img src="me.png" alt="Cyrus Wong" class="profile-img" width="310" height="380">
                 </div>
             </div>
         </div>
     </header>
 
-   <section class="split-section relative z-10" id="about">
-    <div class="max-w-6xl mx-auto w-full gs-reveal">
-        <div class="text-left mb-6">
-            <h2 class="text-3xl font-bold tracking-tight text-white border-b-2 border-[#00F5A0] inline-block pb-1 font-['Space_Grotesk']">About Me</h2>
-        </div>
-        
-        <div class="glass-card w-full p-8 rounded-2xl border border-emerald-500/10 hover:border-emerald-500/30 transition-all duration-300">
-            <h3 class="text-[#00F5A0] font-bold text-sm uppercase tracking-widest mb-6 font-['Space_Grotesk']">Information</h3>
-            
-            <div class="space-y-4">
-                <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
-                    <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-user w-5"></i> Name:</div>
-                    <div class="sm:col-span-3 text-slate-300 row-text">Cyrus Wong (Wong Wai Kuan)</div>
-                </div>
-                <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
-                    <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-calendar w-5"></i> Date of birth:</div>
-                    <div class="sm:col-span-3 text-slate-300 row-text">2009.06.06</div>
-                </div>
-                <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
-                    <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-star w-5"></i> Zodiac Sign:</div>
-                    <div class="sm:col-span-3 text-slate-300 row-text">Gemini</div>
-                </div>
-                <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
-                    <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-location-dot w-5"></i> Location:</div>
-                    <div class="sm:col-span-3 text-slate-300 row-text">Rua Central de Toi Sán, Macau</div>
-                </div>
-                <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
-                    <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-briefcase w-5"></i> Current Role:</div>
-                    <div class="sm:col-span-3 text-slate-300 row-text">Secondary Student (Science Class)</div>
-                </div>
-                <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
-                    <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-school w-5"></i> School:</div>
-                    <div class="sm:col-span-3 text-slate-300 row-text">Macau St. Joseph Diocesan College (The Fifth School)</div>
-                </div>
-                <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
-                    <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-language w-5"></i> Languages:</div>
-                    <div class="sm:col-span-3 text-slate-300 row-text">Cantonese, Mandarin, English</div>
-                </div>
-                <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-start">
-                    <div class="text-[#00F5A0] font-bold flex items-center gap-2 pt-1"><i class="fa-solid fa-bullseye w-5"></i> My Goals:</div>
-                    <div class="sm:col-span-3 text-slate-300 leading-relaxed row-text">To pursue higher education in Computer Science, focusing on the intersection of Artificial Intelligence, Data Science, and software development. I aim to leverage my analytical skills to build efficient, intelligent tech solutions that address real-world challenges.</div>
-                </div>
-                <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 items-center">
-                    <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-quote-left w-5"></i> Motto:</div>
-                    <div class="sm:col-span-3 text-slate-300 italic row-text">"Failing to Prepare, Prepare to Fail."</div>
+    <section class="split-section relative z-10" id="about">
+        <div class="max-w-6xl mx-auto w-full">
+            <div class="text-left mb-6">
+                <h2 class="text-3xl font-bold tracking-tight text-white border-b-2 border-[#00F5A0] inline-block pb-1 font-['Space_Grotesk']">About Me</h2>
+            </div>
+            <div class="glass-card w-full p-8 rounded-2xl border border-emerald-500/10 hover:border-emerald-500/30 transition-all duration-300">
+                <h3 class="text-[#00F5A0] font-bold text-sm uppercase tracking-widest mb-6 font-['Space_Grotesk']">Information</h3>
+                <div class="space-y-4">
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
+                        <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-user w-5"></i> Name:</div>
+                        <div class="sm:col-span-3 text-slate-300 row-text">Cyrus Wong (Wong Wai Kuan)</div>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
+                        <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-calendar w-5"></i> Date of birth:</div>
+                        <div class="sm:col-span-3 text-slate-300 row-text">2009.06.06</div>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
+                        <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-star w-5"></i> Zodiac Sign:</div>
+                        <div class="sm:col-span-3 text-slate-300 row-text">Gemini</div>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
+                        <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-location-dot w-5"></i> Location:</div>
+                        <div class="sm:col-span-3 text-slate-300 row-text">Rua Central de Toi Sán, Macau</div>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
+                        <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-briefcase w-5"></i> Current Role:</div>
+                        <div class="sm:col-span-3 text-slate-300 row-text">Secondary Student (Science Class)</div>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
+                        <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-school w-5"></i> School:</div>
+                        <div class="sm:col-span-3 text-slate-300 row-text">Macau St. Joseph Diocesan College (The Fifth School)</div>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-center">
+                        <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-language w-5"></i> Languages:</div>
+                        <div class="sm:col-span-3 text-slate-300 row-text">Cantonese, Mandarin, English (IELTS 7.5)</div>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 border-b border-emerald-500/5 items-start">
+                        <div class="text-[#00F5A0] font-bold flex items-center gap-2 pt-1"><i class="fa-solid fa-bullseye w-5"></i> My Goals:</div>
+                        <div class="sm:col-span-3 text-slate-300 leading-relaxed row-text">To pursue higher education in Computer Science, focusing on the intersection of Artificial Intelligence, Data Science, and software development. I aim to leverage my analytical skills to build efficient, intelligent tech solutions that address real-world challenges.</div>
+                    </div>
+                    <div class="about-row grid grid-cols-1 sm:grid-cols-4 gap-4 py-3 items-center">
+                        <div class="text-[#00F5A0] font-bold flex items-center gap-2"><i class="fa-solid fa-quote-left w-5"></i> Motto:</div>
+                        <div class="sm:col-span-3 text-slate-300 italic row-text">"Failing to Prepare, Prepare to Fail."</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section class="split-section relative z-10" id="hobbies">
-        <div class="max-w-6xl mx-auto w-full gs-reveal">
+        <div class="max-w-6xl mx-auto w-full">
             <div class="mb-8">
                 <div class="eyebrow text-[#00F5A0]">Interests</div>
                 <h2 class="text-3xl font-bold text-white font-['Space_Grotesk']">Hobbies</h2>
@@ -158,9 +213,9 @@
                     <h3 class="font-bold text-white text-lg mb-2">Chess</h3>
                     <p class="text-slate-400 text-sm">Strategic sequences design tracking predictive moves.</p>
                 </div>
-               <div class="tilt-card zoom-card p-6 rounded-2xl border border-emerald-500/10 shadow-sm">
+                <div class="tilt-card zoom-card p-6 rounded-2xl border border-emerald-500/10 shadow-sm">
                     <div class="card-icon bg-[#00F5A0]/10 text-[#00F5A0] w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-xl">
-                    <i class="fa-solid fa-chess"></i>
+                        <i class="fa-solid fa-chess"></i>
                     </div>
                     <h3 class="font-bold text-white text-lg mb-2">Chinese Chess</h3>
                     <p class="text-slate-400 text-sm">Positional coordination logic configurations.</p>
@@ -179,25 +234,21 @@
         </div>
     </section>
 
-   <section class="split-section relative z-10" id="skills">
-        <div class="max-w-6xl mx-auto w-full gs-reveal">
+    <section class="split-section relative z-10" id="skills">
+        <div class="max-w-6xl mx-auto w-full">
             <div class="text-center mb-8">
                 <div class="eyebrow text-[#00F5A0]">Competencies</div>
                 <h2 class="text-3xl font-bold text-white font-['Space_Grotesk']">Skills</h2>
             </div>
-            
-            <div class="filter-pills-container flex flex-wrap justify-center gap-2 mb-12">
+            <div class="filter-pills-container flex flex-wrap justify-center gap-2 my-8">
                 <button class="pill-btn active" onclick="filterSkills('all')">All</button>
                 <button class="pill-btn" onclick="filterSkills('programming')">Programming Language</button>
                 <button class="pill-btn" onclick="filterSkills('language')">Language</button>
                 <button class="pill-btn" onclick="filterSkills('web')">Web Development</button>
                 <button class="pill-btn" onclick="filterSkills('office')">Office</button>
                 <button class="pill-btn" onclick="filterSkills('design')">Design/Multimedia</button>
-                <button class="pill-btn" onclick="filterSkills('other')">Other</button>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="skillsGrid">
-                
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="programming">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -211,7 +262,6 @@
                         <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 85%"></div>
                     </div>
                 </div>
-
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="programming">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -225,7 +275,6 @@
                         <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 80%"></div>
                     </div>
                 </div>
-
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="programming">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -239,7 +288,6 @@
                         <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 80%"></div>
                     </div>
                 </div>
-
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="language">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -253,7 +301,6 @@
                         <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 100%"></div>
                     </div>
                 </div>
-
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="language">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -267,7 +314,6 @@
                         <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 85%"></div>
                     </div>
                 </div>
-
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="language">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -281,8 +327,7 @@
                         <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 80%"></div>
                     </div>
                 </div>
-
-                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-cert-cat="web" data-skill-cat="web">
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="web">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
                             <div class="text-[#00F5A0] text-2xl"><i class="fa-brands fa-html5"></i></div>
@@ -295,8 +340,7 @@
                         <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 80%"></div>
                     </div>
                 </div>
-
-                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-cert-cat="web" data-skill-cat="web">
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="web">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
                             <div class="text-[#00F5A0] text-2xl"><i class="fa-brands fa-css3-alt"></i></div>
@@ -309,8 +353,7 @@
                         <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 75%"></div>
                     </div>
                 </div>
-
-                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-cert-cat="web" data-skill-cat="web">
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="web">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
                             <div class="text-[#00F5A0] text-2xl"><i class="fa-brands fa-js"></i></div>
@@ -323,7 +366,6 @@
                         <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 75%"></div>
                     </div>
                 </div>
-
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="office">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -337,7 +379,6 @@
                         <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 95%"></div>
                     </div>
                 </div>
-
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="office">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -351,22 +392,20 @@
                         <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 90%"></div>
                     </div>
                 </div>
-
                 <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="office">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
                             <div class="text-[#00F5A0] text-2xl"><i class="fa-solid fa-file-powerpoint"></i></div>
                             <h4 class="font-bold text-lg text-white">PowerPoint</h4>
                         </div>
-                        <span class="text-xs font-bold text-slate-400">85%</span>
+                        <span class="text-xs font-bold text-[#00F5A0]">85%</span>
                     </div>
                     <p class="text-slate-400 text-sm mb-4">Skilled in presentation deck asset mapping, configuring custom template timeline controls, and designing dynamic group slideshow layouts.</p>
                     <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
                         <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 85%"></div>
                     </div>
                 </div>
-
-                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10 hidden-placeholder" data-skill-cat="design">
+                <div class="skill-node-card zoom-card p-6 rounded-2xl border border-emerald-500/10" data-skill-cat="design">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
                             <div class="text-[#00F5A0] text-2xl"><i class="fa-solid fa-photo-film"></i></div>
@@ -379,13 +418,12 @@
                         <div class="h-full bg-gradient-to-r from-[#00F5A0] to-[#00b876] rounded-full" style="width: 80%"></div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <section class="timeline-section relative z-10" id="experiences">
-        <div class="max-w-4xl mx-auto w-full gs-reveal">
+        <div class="max-w-4xl mx-auto w-full">
             <div class="text-center mb-12">
                 <div class="eyebrow text-[#00F5A0]">School Activities</div>
                 <h2 class="text-3xl font-bold text-white font-['Space_Grotesk']">My Activities</h2>
@@ -430,9 +468,8 @@
         </div>
     </section>
 
-    <!-- 证书区域 - 已添加 data-priority 和动画类 -->
     <section class="team-section relative z-10" id="certificate">
-        <div class="max-w-7xl mx-auto w-full gs-reveal">
+        <div class="max-w-7xl mx-auto w-full">
             <div class="team-head text-center">
                 <div class="eyebrow text-[#00F5A0]">Certificates</div>
                 <h2 class="text-4xl font-bold text-white font-['Space_Grotesk']">My Certificates</h2>
@@ -446,70 +483,106 @@
             </div>
 
             <div class="symptoms-rows-container" id="certsContainer">
-                <!-- 按优先级排序：MOIS(1) → MOIJ(2) → 其他IT(3) → MOS(4) → Others(5) -->
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="1">
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="it" data-priority="1">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/MOIS.jpg" alt="MOI Senior">
+                        <img src="cert/MOIS.jpg" alt="Macao Olympiad in Informatics Senior Division Bronze Medal" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
                         <div class="symptom-badge">Information Technology</div>
-                        <h3 class="text-white">Macao Olympiad in Informatics Senior Division</h3>
-                        <p>Secured Bronze Medal honors handling algorithmic data trees, memory optimization scripts, and complex runtime parameters using C++.</p>
+                        <h3 class="text-white">Macao Olympiad in Informatics Senior Division — Bronze Medal</h3>
+                        <p>Secured Bronze Medal honors handling algorithmic data trees, memory optimization scripts, and complex runtime parameters using C++. MOI is the highest-level programming competition in Macau.</p>
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="2">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="it" data-priority="2">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/MOIJ.jpg" alt="MOI Junior Category">
+                        <img src="cert/MOIJ.jpg" alt="Macao Olympiad in Informatics Junior Division Bronze Medal" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
                         <div class="symptom-badge">Information Technology</div>
-                        <h3 class="text-white">Macao Olympiad in Informatics Junior Division</h3>
+                        <h3 class="text-white">Macao Olympiad in Informatics Junior Division — Bronze Medal</h3>
                         <p>Secured Bronze Medal ranking processing graph traversals, basic logic arrays algorithms, and runtime variables constraints.</p>
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="3">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="it" data-priority="3">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/FISO_IT.jpg" alt="FISO Digital Tech">
+                        <img src="cert/robofest.jpg" alt="ROBFEST Macau BottleSumo Gold Award" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
                         <div class="symptom-badge">Information Technology</div>
-                        <h3 class="text-white">Future Intelligence Students Olympiad — Digital Technology</h3>
+                        <h3 class="text-white">ROBFEST Macau BottleSumo SeniorClassic — Gold Award 1st Place</h3>
+                        <p>Clinched Gold Award 1st place designing embedded threshold sensory code arrays for mechanical microcontrollers. Winners advance to the international finals at Lawrence Technological University in the United States.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="it" data-priority="4">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/second_prize.jpg" alt="NOC 2025/2026 AI Battle Second Prize" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">2025/2026 NOC Macao — Intelligent Battle (Senior Secondary), Second Prize</h3>
+                        <p>Awarded Second Prize in the Intelligent Battle senior secondary category of the NOC Macao regional competition. NOC is an official Ministry of Education "whitelist" national competition organized by the Chinese Association for Artificial Intelligence.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="it" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/hk_macau_youth_2026.jpg" alt="Hong Kong-Macau Youth Network Skills Competition 2026 Silver Award" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">Hong Kong-Macau Youth Network Skills Competition 2026 — Silver Award</h3>
+                        <p>Earned the Silver Award in a cross-regional networking and IT skills competition between Hong Kong and Macau, jointly organized by CPTTM, DSEDJ, Cisco Networking Academy Hong Kong, and HKITEA.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="it" data-priority="6">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/macau_mobile_web_2026.jpg" alt="Macao Mobile Website 2026 2nd Runner-up" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">Macao Secondary School Mobile Website Technology Skills Competition 2026 — 2nd Runner-up</h3>
+                        <p>Achieved 2nd Runner-up overall in the Macao inter-school mobile website technology skills competition, co-organized by CPTTM and DSEDJ with 18 schools and 56 teams participating.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="it" data-priority="7">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/FISO_IT.jpg" alt="FISO Digital Technology Silver Medal" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Information Technology</div>
+                        <h3 class="text-white">Future Intelligence Students Olympiad — Digital Technology, Silver Medal</h3>
                         <p>Awarded the Silver Medal placement evaluating computing parameters, automated networks logic, and code optimization parameters.</p>
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="3">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="it" data-priority="8">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/alice.jpg" alt="Macao IT AI Contest">
+                        <img src="cert/alice.jpg" alt="Macao-wide IT Competition AI Creation Merit Award" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
                         <div class="symptom-badge">Information Technology</div>
-                        <h3 class="text-white">17th Macao-wide IT Competition — AI Creation Category</h3>
+                        <h3 class="text-white">17th Macao-wide IT Competition — AI Creation Category, Merit Award</h3>
                         <p>Earned the Merit Award for structural excellence inside localized 3D scripting tracks and artificial intelligence design tools.</p>
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="3">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="it" data-priority="9">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/robofest.jpg" alt="Robofest Gold">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Information Technology</div>
-                        <h3 class="text-white">ROBFEST Macau BottleSumo SeniorClassic</h3>
-                        <p>Clinched Gold Award 1st place designing embedded threshold sensory code arrays for mechanical microcontrollers.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="3">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/cyber.jpg" alt="Qianxin Tech">
+                        <img src="cert/cyber.jpg" alt="Qianxin Network Security Certificate" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
@@ -519,9 +592,9 @@
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="3">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="it" data-priority="10">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/python_cert_edit.jpg" alt="CIE Level 1">
+                        <img src="cert/python_cert_edit.jpg" alt="CIE Python Level 1 Certificate" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
@@ -531,9 +604,9 @@
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="it" data-priority="3">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="it" data-priority="11">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/cpttm_mos.jpg" alt="CPTTM Micro Event">
+                        <img src="cert/cpttm_mos.jpg" alt="Macau Microsoft Office Skills Competition Excel Finalist" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
@@ -543,82 +616,9 @@
                     </div>
                 </div>
 
-                <!-- MOS 类证书 (优先级 4) -->
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="mos" data-priority="1">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/excel_asso.jpg" alt="MOS Excel Associate">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Microsoft Office Specialists</div>
-                        <h3 class="text-white">Microsoft Office Specialist — Excel 365 Associate</h3>
-                        <p>Certified spreadsheet data modeling capability including standard formulas deployment, chart structuring, and worksheets management.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/excel_expert.jpg" alt="MOS Excel Expert">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Microsoft Office Specialists</div>
-                        <h3 class="text-white">Microsoft Office Specialist — Excel 365 Expert</h3>
-                        <p>Advanced system credential validating deployment of intricate logical calculation formulas, workbook macro automation, and nested lookup matrices.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/word_asso.jpg" alt="MOS Word Associate">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Microsoft Office Specialists</div>
-                        <h3 class="text-white">Microsoft Office Specialist — Word 365 Associate</h3>
-                        <p>Validation of semantic document generation, formatting guidelines compliance, table indexing, and page flow configuration rules.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/word_expert.jpg" alt="MOS Word Expert">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Microsoft Office Specialists</div>
-                        <h3 class="text-white">Microsoft Office Specialist — Word 365 Expert</h3>
-                        <p>Professional configuration certification mapping advanced layout reference tools, custom template controls, and variable integration macros.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/ppt_asso.jpg" alt="MOS PowerPoint">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Microsoft Office Specialists</div>
-                        <h3 class="text-white">Microsoft Office Specialist — PowerPoint 365</h3>
-                        <p>Certified operational validation for slide show asset mapping, advanced presentation timeline structures, and multimedia asset compilation.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/mos_asso.jpg" alt="MOS Asso">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Microsoft Office Specialists</div>
-                        <h3 class="text-white">Microsoft Office Specialist — Associate (M365 Apps)</h3>
-                        <p>Validates professional-grade core proficiency in digital workflows across Microsoft Excel, Word, and PowerPoint packages.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/mos_expert.jpg" alt="MOS Expert">
+                        <img src="cert/mos_expert.jpg" alt="MOS Expert M365 Apps" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
@@ -628,46 +628,141 @@
                     </div>
                 </div>
 
-                <!-- Others 类证书 (优先级 5) -->
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="mos" data-priority="2">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/FISO_math.jpg" alt="FISO Math">
+                        <img src="cert/excel_expert.jpg" alt="MOS Excel 365 Expert" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Future Intelligence Students Olympiad — Mathematics</h3>
-                        <p>Achieved Bronze Medal recognition evaluating advanced numerical data arrays, combinatorics sequences, and logic metrics.</p>
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Excel 365 Expert</h3>
+                        <p>Advanced system credential validating deployment of intricate logical calculation formulas, workbook macro automation, and nested lookup matrices.</p>
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="mos" data-priority="3">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/FMO.jpg" alt="Fermat Math">
+                        <img src="cert/word_expert.jpg" alt="MOS Word 365 Expert" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Word 365 Expert</h3>
+                        <p>Professional configuration certification mapping advanced layout reference tools, custom template controls, and variable integration macros.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="mos" data-priority="4">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/mos_asso.jpg" alt="MOS Associate M365 Apps" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Associate (M365 Apps)</h3>
+                        <p>Validates professional-grade core proficiency in digital workflows across Microsoft Excel, Word, and PowerPoint packages.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="mos" data-priority="5">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/excel_asso.jpg" alt="MOS Excel 365 Associate" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Excel 365 Associate</h3>
+                        <p>Certified spreadsheet data modeling capability including standard formulas deployment, chart structuring, and worksheets management.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="mos" data-priority="6">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/word_asso.jpg" alt="MOS Word 365 Associate" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — Word 365 Associate</h3>
+                        <p>Validation of semantic document generation, formatting guidelines compliance, table indexing, and page flow configuration rules.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="mos" data-priority="7">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/ppt_asso.jpg" alt="MOS PowerPoint 365" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Microsoft Office Specialists</div>
+                        <h3 class="text-white">Microsoft Office Specialist — PowerPoint 365</h3>
+                        <p>Certified operational validation for slide show asset mapping, advanced presentation timeline structures, and multimedia asset compilation.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="1">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/science_scholarship.jpg" alt="Macau Foundation Award" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
                         <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Fermat Mathematical Olympiad National Round</h3>
+                        <h3 class="text-white">Macau Foundation Award for Excellence in Science and Technology (2024/2025)</h3>
+                        <p>Recipient of the prestigious government-backed Macau Foundation Prize. Awarded for achieving the 1st place ranking across all science stream disciplines.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="2">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/ielts_7_5.jpg" alt="IELTS Academic Overall Band 7.5" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">IELTS Academic — Overall Band 7.5</h3>
+                        <p>Achieved Overall Band 7.5 in IELTS Academic. Listening 7.0 / Reading 7.5 / Writing 7.0 / Speaking 7.5. This score is competitive for Oxford, Cambridge, LSE, and other top-tier university applications.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="3">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/best_delegate.jpg" alt="Greater Bay Area MUN Best Delegate" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Greater Bay Area International Model United Nations — Best Delegate</h3>
+                        <p>Awarded top honors as Best Delegate for executing complex international policy simulations and multi-party solution drafts. Best Delegate is the highest individual award in MUN.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="4">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/FMO.jpg" alt="Fermat Mathematical Olympiad Bronze" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">Fermat Mathematical Olympiad National Round — Bronze Medal</h3>
                         <p>Secured Bronze Medal metrics analyzing theoretical algebra transformations, functions routing, and numerical proofs.</p>
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="5">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/best_delegate.jpg" alt="MUN Award">
+                        <img src="cert/FISO_math.jpg" alt="FISO Mathematics Bronze Medal" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
                         <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Greater Bay Area International Model United Nations</h3>
-                        <p>Awarded top honors as Best Delegate for executing complex international policy simulations and multi-party solution drafts.</p>
+                        <h3 class="text-white">Future Intelligence Students Olympiad — Mathematics, Bronze Medal</h3>
+                        <p>Achieved Bronze Medal recognition evaluating advanced numerical data arrays, combinatorics sequences, and logic metrics.</p>
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="6">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/singapore_global.jpg" alt="Singapore Finals">
+                        <img src="cert/singapore_global.jpg" alt="Singapore Math Global Finals" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
@@ -677,117 +772,33 @@
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="7">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/phy_comp.jpg" alt="Physics Gold">
+                        <img src="cert/singapore_macau.jpg" alt="Singapore Math Challenge Commendable Award" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
                         <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">International Children and Youth Physics Competition</h3>
-                        <p>Awarded absolute Gold Medal rating evaluating mechanical force balances, structural kinetics, and thermodynamic equations.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/chem_comp.jpg" alt="Chemistry Gold">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">International Children and Youth Chemistry Competition</h3>
-                        <p>Secured Gold Medal parameters testing acid-base calculations matrices, organic properties analysis, and elemental compounds datasets.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/bio_comp.jpg" alt="Biology Special">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">International Children and Youth Biology Competition</h3>
-                        <p>Earned premium Special Gold Medal metric tracking micro-cellular anatomy logs and structural inheritance sequence arrays.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/phy_bowl.jpg" alt="Asia Physics">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Asia Physics Bowl Challenge Tournament</h3>
-                        <p>Ranked First Runner Up overall analyzing advanced electromagnetic flux vectors and momentum matrix distribution mechanics.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/singapore_macau.jpg" alt="SMC Math">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Singapore Math Challenge Profile</h3>
+                        <h3 class="text-white">Singapore Math Challenge Profile — Commendable Award</h3>
                         <p>Honored with the Commendable Award index solving complex equation structures and abstract discrete logic transforms.</p>
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="8">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/NCTE.jpg" alt="English NCE">
+                        <img src="cert/NCTE.jpg" alt="NCTE Level 5" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
                         <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">New Concept Tests of English (Level 5)</h3>
+                        <h3 class="text-white">New Concept Tests of English (Level 5) — Good</h3>
                         <p>Achieved verified 'Good' proficiency index tracking complex technical text evaluation, processing rules, and literacy syntax tracks.</p>
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="9">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/4by4_fourth.jpg" alt="Track and Field Relays">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">47th Macau Inter-School Athletics Championship</h3>
-                        <p>Competing in the highly competitive division, my team and I secured an impressive 4th-place finish in the 4*400m relay event matrix.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/4by4_7th.jpg" alt="Relay Heats">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">48th Macau Inter-School Athletics Championship</h3>
-                        <p>Successfully fought through the heats to secure a 7th-place finish in the finals, maintaining our standing among the top relay squads across the district track parameters.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/4by1_8th.jpg" alt="Relay Sprint">
-                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="symptom-row-content">
-                        <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">49th Macau Inter-School Athletics Championship</h3>
-                        <p>Testing explosive speed and baton-passing precision, I competed in the 4*100m sprint relay, earning an 8th-place finish overall within macro competition tiers.</p>
-                    </div>
-                </div>
-
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
-                    <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/academic.jpg" alt="Scholastic Award">
+                        <img src="cert/academic.jpg" alt="Academic Achievement First Prize" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
@@ -797,9 +808,21 @@
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="10">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/student_union.jpg" alt="Student Union Cert">
+                        <img src="cert/lit_his_geog_edit.jpg" alt="Literature History Geography Quiz" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">2nd Runner-Up – Literature, History, and Geography Knowledge Quiz Competition (2025)</h3>
+                        <p>Achieved 3rd place in a collaborative group quiz competition testing advanced knowledge in regional geography, cultural history, and literature.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="11">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/student_union.jpg" alt="Student Union Outstanding Performance" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
@@ -809,27 +832,87 @@
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="12">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/science_scholarship.jpg" alt="Macau Foundation Scholarship">
+                        <img src="cert/4by4_fourth.jpg" alt="47th Macau Athletics 4x400m 4th Place" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
                         <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">Macau Foundation Award for Excellence in Science and Technology (2024/2025)</h3>
-                        <p>Recipient of the prestigious government-backed Macau Foundation Prize. Awarded for achieving the 1st place ranking across all science stream disciplines, including Physics, Chemistry, Biology, and Information Technology.</p>
+                        <h3 class="text-white">47th Macau Inter-School Athletics Championship — 4x400m Relay 4th Place</h3>
+                        <p>Competing in the highly competitive division, my team and I secured an impressive 4th-place finish in the 4*400m relay event matrix.</p>
                     </div>
                 </div>
 
-                <div class="symptom-row-card cert-grid-card zoom-card gs-reveal border border-emerald-500/10" data-cert-cat="others" data-priority="5">
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="13">
                     <div class="symptom-row-img" onclick="openLightbox(this)">
-                        <img src="cert/lit_his_geog_edit.jpg" alt="lit-his-geog">
+                        <img src="cert/4by4_7th.jpg" alt="48th Macau Athletics 4x400m 7th Place" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="symptom-row-content">
                         <div class="symptom-badge">Others</div>
-                        <h3 class="text-white">2nd Runner-Up– Literature, History, and Geography Knowledge Quiz Competition (2025)</h3>
-                        <p>Achieved 3rd place in a collaborative group quiz competition testing advanced knowledge in regional geography, cultural history, and literature. Demonstrates well-rounded academic versatility, quick analytical thinking under pressure, and strong team communication skills.</p>
+                        <h3 class="text-white">48th Macau Inter-School Athletics Championship — 4x400m Relay 7th Place</h3>
+                        <p>Successfully fought through the heats to secure a 7th-place finish in the finals, maintaining our standing among the top relay squads.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="14">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/4by1_8th.jpg" alt="49th Macau Athletics 4x100m 8th Place" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others</div>
+                        <h3 class="text-white">49th Macau Inter-School Athletics Championship — 4x100m Relay 8th Place</h3>
+                        <p>Testing explosive speed and baton-passing precision, I competed in the 4*100m sprint relay, earning an 8th-place finish overall.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="99">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/phy_comp.jpg" alt="Youth Physics Competition" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others · 參與/基礎級別</div>
+                        <h3 class="text-white">International Children and Youth Physics Competition</h3>
+                        <p>Awarded Gold Medal rating evaluating mechanical force balances, structural kinetics, and thermodynamic equations. <em>Note: This competition is classified as a participation-level event for personal enrichment.</em></p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="99">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/chem_comp.jpg" alt="Youth Chemistry Competition" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others · 參與/基礎級別</div>
+                        <h3 class="text-white">International Children and Youth Chemistry Competition</h3>
+                        <p>Secured Gold Medal parameters testing acid-base calculations matrices, organic properties analysis, and elemental compounds datasets. <em>Note: Participation-level event.</em></p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="99">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/bio_comp.jpg" alt="Youth Biology Competition" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others · 參與/基礎級別</div>
+                        <h3 class="text-white">International Children and Youth Biology Competition</h3>
+                        <p>Earned premium Special Gold Medal metric tracking micro-cellular anatomy logs and structural inheritance sequence arrays. <em>Note: Participation-level event.</em></p>
+                    </div>
+                </div>
+
+                <div class="symptom-row-card cert-grid-card zoom-card border border-emerald-500/10" data-cert-cat="others" data-priority="99">
+                    <div class="symptom-row-img" onclick="openLightbox(this)">
+                        <img src="cert/phy_bowl.jpg" alt="Asia Physics Bowl" loading="lazy" decoding="async">
+                        <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="symptom-row-content">
+                        <div class="symptom-badge">Others · 參與/基礎級別</div>
+                        <h3 class="text-white">Asia Physics Bowl Challenge Tournament — First Runner Up</h3>
+                        <p>Ranked First Runner Up overall analyzing advanced electromagnetic flux vectors and momentum matrix distribution mechanics. <em>Note: Participation-level event.</em></p>
                     </div>
                 </div>
 
@@ -837,18 +920,16 @@
         </div>
     </section>
 
-   <section class="split-section relative z-10" id="projects">
-        <div class="max-w-6xl mx-auto w-full gs-reveal">
+    <section class="split-section relative z-10" id="projects">
+        <div class="max-w-6xl mx-auto w-full">
             <div class="mb-8">
                 <div class="eyebrow text-[#00F5A0]">Builds</div>
                 <h2 class="text-3xl font-bold text-white font-['Space_Grotesk']">Application Showcase</h2>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
                     <div class="symptom-row-img h-[200px]" onclick="openLightbox(this)">
-                        <img src="hanoi_tower.png" alt="Hanoi Tower Robotics" class="w-full h-full object-cover">
+                        <img src="hanoi_tower.png" alt="Hanoi Tower Robotics" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow">
@@ -856,18 +937,16 @@
                             <i class="fa-solid fa-microchip"></i>
                             <h3>Hanoi Tower Robotics</h3>
                         </div>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">
-                            Automated solver for the Hanoi Tower puzzle using Arduino. Synchronizes physical motor hardware with recursive logic.
-                        </p>
-                        <a href="https://github.com/Cyrus0606/Hanoi-Tower-Claw-Composition" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">Automated solver for the Hanoi Tower puzzle using Arduino. Synchronizes physical motor hardware with recursive logic.</p>
+                        <a href="https://github.com/Cyrus0606/Hanoi-Tower-Claw-Composition" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
                             <i class="fa-brands fa-github"></i> View Code
                         </a>
                     </div>
-                </div>
+                </article>
 
-                <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
+                <article class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
                     <div class="symptom-row-img h-[200px]" onclick="openLightbox(this)">
-                        <img src="chinese_chess.jpg" alt="Chinese Chess Engine" class="w-full h-full object-cover">
+                        <img src="chinese_chess.jpg" alt="Chinese Chess" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow">
@@ -875,18 +954,16 @@
                             <i class="fa-solid fa-chess-board"></i>
                             <h3>Chinese Chess</h3>
                         </div>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">
-                            Created an interactive online Chinese Chess board that allows two players to play Chinese Chess 
-                        </p>
-                        <a href="https://cyrus0606.github.io/CDSJ5-Chinese_Chess/" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
-                            <i class="fa-brands fa-github"></i> Check It Out! 
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">Created an interactive online Chinese Chess board that allows two players to play Chinese Chess.</p>
+                        <a href="https://cyrus0606.github.io/CDSJ5-Chinese_Chess/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                            <i class="fa-brands fa-github"></i> Check It Out!
                         </a>
                     </div>
-                </div>
+                </article>
 
-                <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
+                <article class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
                     <div class="symptom-row-img h-[200px]" onclick="openLightbox(this)">
-                        <img src="trisomy.png" alt="Genetics Project" class="w-full h-full object-cover">
+                        <img src="trisomy.png" alt="Trisomy 21" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         <div class="magnify-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow">
@@ -894,329 +971,624 @@
                             <i class="fa-solid fa-dna"></i>
                             <h3>All About Trisomy 21</h3>
                         </div>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">
-                            Educational web platform exploring chromosomal mutations and genetic disease inheritance structures for biology studies.
-                        </p>
-                        <a href="https://cyrus0606.github.io/F5B_21_23_26_BiologyExamProject/" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
-                            <i class="fa-brands fa-github"></i> Check It Out! 
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">Educational web platform exploring chromosomal mutations and genetic disease inheritance structures for biology studies.</p>
+                        <a href="https://cyrus0606.github.io/F5B_21_23_26_BiologyExamProject/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                            <i class="fa-brands fa-github"></i> Check It Out!
                         </a>
                     </div>
-                </div>
+                </article>
 
-                <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
+                <article class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
                     <div class="h-[200px] w-full overflow-hidden relative">
-                    <iframe 
-                            class="w-full h-full" 
-                            src="https://www.youtube.com/embed/k_Bj0CftqqI" 
-                            title="IELTS App Demo" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/k_Bj0CftqqI" title="IELTS App Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
                         <div class="flex items-center gap-2 text-[#00F5A0] font-bold text-base mb-2">
                             <i class="fa-brands fa-weixin"></i>
-                            <h3>IELTS Practice Wechat Mini Program</h3>
+                            <h3>IELTS Practice WeChat Mini Program</h3>
                         </div>
-                    <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">
-                            WeChat Mini Program utilizing backend speech diagnostic logic arrays and automated grading workflows.
-                    </p>
-                    <div class="flex gap-4 mt-auto pt-4 border-t border-emerald-500/5">
-                    <a href="https://winglao.github.io/AiOralPractice/" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
-                            <i class="fa-brands fa-github"></i> View Code
-                    </a>
-                    <a href="https://youtu.be/k_Bj0CftqqI" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
-                            <i class="fa-brands fa-youtube"></i> Watch on YouTube
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
-                    <div class="h-[200px] w-full overflow-hidden relative">
-                    <iframe 
-                            class="w-full h-full" 
-                            src="https://www.youtube.com/embed/hsMMsBAN808" 
-                            title="AI Story Demo" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
-            </div>
-            <div class="p-5 flex flex-col flex-grow">
-            <div class="flex items-center gap-2 text-[#00F5A0] font-bold text-base mb-2">
-            <i class="fa-solid fa-robot"></i>
-            <h3>Macao IT Competition: AI & 3D Programming</h3>
-            </div>
-            <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">
-                Created an AI-assisted visual poster and a short video to communicate key climate change data through engaging visual storytelling. Demonstrates practical skills in prompt engineering and digital media design.
-            </p>
-        
-                <div class="flex gap-4 mt-auto pt-4 border-t border-emerald-500/5">
-                    <a href="https://youtu.be/hsMMsBAN808" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
-                        <i class="fa-brands fa-youtube"></i> Watch on YouTube
-                    </a>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">WeChat Mini Program utilizing backend speech diagnostic logic arrays and automated grading workflows.</p>
+                        <div class="flex gap-4 mt-auto pt-4 border-t border-emerald-500/5">
+                            <a href="https://winglao.github.io/AiOralPractice/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                                <i class="fa-brands fa-github"></i> View Code
+                            </a>
+                            <a href="https://youtu.be/k_Bj0CftqqI" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                                <i class="fa-brands fa-youtube"></i> Watch on YouTube
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </article>
 
-            <div class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
-                <div class="h-[200px] w-full overflow-hidden relative bg-black">
-                <iframe 
-                        class="w-full h-full" 
-                        src="https://www.youtube.com/embed/lEoieYfrD04?rel=0&modestbranding=1" 
-                        title="Accounting Automation Demo" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-    
-            <div class="p-5 flex flex-col flex-grow">
-                    <div class="flex items-center gap-2 text-[#00F5A0] font-bold text-base mb-2">
-                    <i class="fa-solid fa-bolt"></i>
-                    <h3>Accounting Book Automation</h3>
-            </div>
-            <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">
-                    Automated financial record-keeping built with <strong>n8n</strong>. This system streamlines data pipelines and minimizes manual entry errors.
-            </p>
-        
-            <div class="mt-auto pt-4 border-t border-emerald-500/5">
-                    <a href="https://youtu.be/lEoieYfrD04" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
-                    <i class="fa-brands fa-youtube"></i> Watch on YouTube
-                    </a>
-            </div>
-            </div>
+                <article class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
+                    <div class="h-[200px] w-full overflow-hidden relative">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/hsMMsBAN808" title="AI Story Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-[#00F5A0] font-bold text-base mb-2">
+                            <i class="fa-solid fa-robot"></i>
+                            <h3>Macao IT Competition: AI &amp; 3D Programming</h3>
+                        </div>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">Created an AI-assisted visual poster and a short video to communicate key climate change data through engaging visual storytelling.</p>
+                        <div class="flex gap-4 mt-auto pt-4 border-t border-emerald-500/5">
+                            <a href="https://youtu.be/hsMMsBAN808" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                                <i class="fa-brands fa-youtube"></i> Watch on YouTube
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flex flex-col rounded-2xl border border-emerald-500/10 shadow-sm glass-card zoom-card overflow-hidden">
+                    <div class="h-[200px] w-full overflow-hidden relative bg-black">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/lEoieYfrD04?rel=0&modestbranding=1" title="Accounting Automation Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-[#00F5A0] font-bold text-base mb-2">
+                            <i class="fa-solid fa-bolt"></i>
+                            <h3>Accounting Book Automation</h3>
+                        </div>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">Automated financial record-keeping built with <strong>n8n</strong>. This system streamlines data pipelines and minimizes manual entry errors.</p>
+                        <div class="mt-auto pt-4 border-t border-emerald-500/5">
+                            <a href="https://youtu.be/lEoieYfrD04" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00F5A0] hover:underline">
+                                <i class="fa-brands fa-youtube"></i> Watch on YouTube
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <footer class="bg-[#0b0f19] py-16 border-t border-emerald-500/10 relative z-10">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
-        
-        <div>
-            <h3 class="text-white font-bold text-xl mb-6 border-b-2 border-[#00F5A0] inline-block pb-1">Contact</h3>
-            <div class="space-y-4">
-                <div class="flex items-center gap-3 text-slate-400">
-                    <i class="fa-solid fa-phone text-[#00F5A0]"></i>
-                    <div>
-                        <p class="text-[10px] uppercase tracking-widest text-slate-500">Phone Number</p>
-                        <p class="text-sm text-slate-200">+853 6340 7757</p>
+    <footer id="contact-footer" class="bg-[#0b0f19] py-16 border-t border-emerald-500/10 relative z-10">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-white font-bold text-xl mb-6 border-b-2 border-[#00F5A0] inline-block pb-1">Contact</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-slate-400">
+                        <i class="fa-solid fa-phone text-[#00F5A0]"></i>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-widest text-slate-500">Phone Number</p>
+                            <a href="tel:+85363407757" class="text-sm text-slate-200 hover:text-[#00F5A0]">+853 6340 7757</a>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center gap-3 text-slate-400">
-                    <i class="fa-solid fa-envelope text-[#00F5A0]"></i>
-                    <div>
-                        <p class="text-[10px] uppercase tracking-widest text-slate-500">Email</p>
-                        <p class="text-sm text-slate-200">cyruslikesschool0606@gmail.com</p>
+                    <div class="flex items-center gap-3 text-slate-400">
+                        <i class="fa-solid fa-envelope text-[#00F5A0]"></i>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-widest text-slate-500">Email</p>
+                            <a href="mailto:cyruslikesschool0606@gmail.com" class="text-sm text-slate-200 hover:text-[#00F5A0]">cyruslikesschool0606@gmail.com</a>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center gap-3 text-slate-400">
-                    <i class="fa-brands fa-weixin text-[#00F5A0]"></i>
-                    <div>
-                        <p class="text-[10px] uppercase tracking-widest text-slate-500">WeChat</p>
-                        <p class="text-sm text-slate-200">CyrusW0606</p>
+                    <div class="flex items-center gap-3 text-slate-400">
+                        <i class="fa-brands fa-weixin text-[#00F5A0]"></i>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-widest text-slate-500">WeChat</p>
+                            <p class="text-sm text-slate-200">CyrusW0606</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div>
-            <h3 class="text-white font-bold text-xl mb-6 border-b-2 border-[#00F5A0] inline-block pb-1">Social Media</h3>
-            <div class="flex gap-4">
-                <a href="https://www.instagram.com/cyrus_w0606/" class="w-10 h-10 rounded-full border border-emerald-500/20 flex items-center justify-center text-[#00F5A0] hover:bg-[#00F5A0] hover:text-[#0b0f19] transition-all">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-            </div>
+        <div class="flex justify-center mt-12">
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top" class="w-10 h-10 rounded-full bg-emerald-500/10 text-[#00F5A0] flex items-center justify-center hover:bg-[#00F5A0] hover:text-[#0b0f19] transition-all">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
         </div>
-    </div>
-    
-    <div class="flex justify-center mt-12">
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-10 h-10 rounded-full bg-emerald-500/10 text-[#00F5A0] flex items-center justify-center hover:bg-[#00F5A0] hover:text-[#0b0f19] transition-all">
-            <i class="fa-solid fa-arrow-up"></i>
-        </button>
-    </div>
-</footer>
-
-    <footer id="contact-footer" class="py-6 border-t border-emerald-500/5 text-center text-xs text-slate-500 relative z-10">
-    <p>&copy; 2026 Cyrus Wong.</p>
+        <p class="text-center text-xs text-slate-500 mt-8">&copy; 2026 Cyrus Wong.</p>
     </footer>
 
-   <script>
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+    <script>
+    (function () {
+        'use strict';
 
-    window.addEventListener("load", () => {
-        // --- INITIALIZE PARTICLES ---
-        tsParticles.load("tsparticles", {
-            particles: {
-                number: { value: 60 }, color: { value: "#00F5A0" }, shape: { type: "circle" },
-                opacity: { value: 0.3 }, size: { value: 2 },
-                move: { enable: true, speed: 1, direction: "none", outModes: { default: "out" } },
-                links: { enable: true, distance: 150, color: "#00F5A0", opacity: 0.15, width: 1 }
-            },
-            interactivity: { events: { onHover: { enable: true, mode: "grab" } } }
-        });
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-        // --- TYPED PRELOADER & ENTRANCE ---
-        const typedText = document.getElementById("typed-text");
-        const fullText = "CYRUS.W_";
-        const preloader = document.getElementById("preloader");
-        
-        // Setup initial states
-        gsap.set("#nav", { opacity: 0, y: -24 });
-        gsap.set("#flyInPortrait", { x: "170%", opacity: 0, scale: 0.85 });
-        gsap.set(".hero .grid > div", { opacity: 0, y: 35 });
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isTouch = window.matchMedia('(hover: none)').matches;
 
-        const tl = gsap.timeline();
-        
-        // 1. Typing effect (Fast)
-        tl.to({ val: 0 }, { 
-            val: fullText.length, 
-            duration: 0.7, 
-            onUpdate: function() { 
-                typedText.innerText = fullText.substring(0, Math.floor(this.targets()[0].val)); 
-            }, 
-            ease: "none" 
-        })
-        // 2. Hide Preloader quickly
-        .to(preloader, { opacity: 0, duration: 0.3, delay: 0.2, onComplete: () => {
-            preloader.style.display = "none";
-            document.body.classList.remove("overflow-hidden");
-        }})
-        // 3. Entrance sequence (Tighter timing)
-        .to("#nav", { opacity: 1, y: 0, duration: 0.6 }, "-=0.2")
-        .to("#flyInPortrait", { x: "0%", opacity: 1, scale: 1, duration: 0.7 }, "-=0.4")
-        .to(".hero .grid > div", { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 }, "-=0.5");
+        /* ============================================================
+           1. 初始排序（只做一次）
+           ============================================================ */
+        function sortCertificatesOnce() {
+            const container = document.getElementById('certsContainer');
+            if (!container) return;
 
-        // --- NAVIGATION, GSAP REVEALS & TILT ---
-        const menuLinks = document.querySelectorAll(".nav-links a, .logo");
-        menuLinks.forEach(link => {
-            link.addEventListener("click", (e) => {
-                const destinationPath = link.getAttribute("href");
-                if (destinationPath && destinationPath.startsWith("#")) {
-                    e.preventDefault();
-                    const nodeElement = document.querySelector(destinationPath);
-                    if (nodeElement) {
-                        gsap.to(window, { duration: 1.2, scrollTo: { y: nodeElement, offsetY: destinationPath === "#contact-footer" ? 0 : 75 }, ease: "power4.inOut" });
-                    }
-                }
+            const categoryOrder = { it: 1, mos: 2, others: 3 };
+            const cards = Array.from(container.children).filter(el => el.classList.contains('cert-grid-card'));
+
+            cards.sort((a, b) => {
+                const catA = categoryOrder[a.dataset.certCat] || 99;
+                const catB = categoryOrder[b.dataset.certCat] || 99;
+                if (catA !== catB) return catA - catB;
+                const pa = parseInt(a.dataset.priority, 10);
+                const pb = parseInt(b.dataset.priority, 10);
+                return (Number.isFinite(pa) ? pa : 999) - (Number.isFinite(pb) ? pb : 999);
             });
-        });
 
-        document.querySelectorAll(".gs-reveal").forEach((element) => {
-            gsap.fromTo(element, { opacity: 0, y: 35 }, { scrollTrigger: { trigger: element, start: "top 92%" }, opacity: 1, y: 0, duration: 0.8, ease: "power2.out" });
-        });
+            const frag = document.createDocumentFragment();
+            cards.forEach(c => frag.appendChild(c));
+            container.appendChild(frag);
+        }
 
-        document.querySelectorAll(".tilt-card").forEach((card) => {
-            card.addEventListener("mousemove", (e) => {
-                const b = card.getBoundingClientRect();
-                gsap.to(card, { rotateX: -((e.clientY - b.top) / b.height - 0.5) * 12, rotateY: ((e.clientX - b.left) / b.width - 0.5) * 12, duration: 0.3, transformPerspective: 900 });
-            });
-            card.addEventListener("mouseleave", () => gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.7 }));
-        });
-
-        sortCertificates();
-    });
-
-    // --- HELPER FUNCTIONS ---
-    function sortCertificates() {
-        const container = document.getElementById('certsContainer');
-        if (!container) return;
-        const cards = Array.from(container.querySelectorAll('.cert-grid-card'));
-        cards.sort((a, b) => (parseInt(a.dataset.priority) || 999) - (parseInt(b.dataset.priority) || 999));
-        cards.forEach(c => container.appendChild(c));
-    }
-
-    // 过滤证书（保留排序）
-    window.filterCertificates = function(targetCategory) {
-        // 更新按钮激活状态
-        document.querySelectorAll('.cert-pill').forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${targetCategory}'`));
-        });
-
-        const container = document.getElementById('certsContainer');
-        const cards = Array.from(container.querySelectorAll('.cert-grid-card'));
-
-        // 先根据类别显示/隐藏
-        cards.forEach(card => {
-            const cat = card.dataset.certCat;
-            if (targetCategory === 'all' || cat === targetCategory) {
-                card.style.display = 'flex'; // 或 'block'，取决于布局
-            } else {
-                card.style.display = 'none';
+        /* ============================================================
+           2. 篩選器（純 class 切換，零 DOM 重排）
+           ============================================================ */
+        function filterCertificates(targetCategory) {
+            const pills = document.querySelectorAll('.cert-pill');
+            for (let i = 0; i < pills.length; i++) {
+                const btn = pills[i];
+                const attr = btn.getAttribute('onclick') || '';
+                btn.classList.toggle('active', attr.includes(`'${targetCategory}'`));
             }
-        });
 
-        // 然后排序（只排可见的）
-        sortCertificates();
+            const container = document.getElementById('certsContainer');
+            if (!container) return;
 
-        // 最后对可见卡片做入场动画
-        const visibleCards = Array.from(container.querySelectorAll('.cert-grid-card')).filter(c => c.style.display !== 'none');
-        gsap.fromTo(visibleCards, 
-            { opacity: 0, y: 20, scale: 0.95 },
-            { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.04, ease: "power3.out", overwrite: "auto" }
-        );
-    };
-
-    // --- 原有 filterSkills（保持不变） ---
-    window.filterSkills = function(targetCategory) {
-        document.querySelectorAll('#skills .pill-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${targetCategory}'`));
-        });
-
-        const activeNodes = [], inactiveNodes = [];
-        document.querySelectorAll('.skill-node-card').forEach(card => {
-            (targetCategory === 'all' || card.getAttribute('data-skill-cat') === targetCategory) 
-                ? activeNodes.push(card) : inactiveNodes.push(card);
-        });
-
-        gsap.set(inactiveNodes, { display: 'none', opacity: 0 });
-        gsap.set(activeNodes, { display: 'block' });
-        gsap.fromTo(activeNodes, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.04, ease: "power2.out", overwrite: "auto" });
-    };
-
-    // --- 灯箱函数 ---
-    window.openLightbox = function(containerElement) {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const img = containerElement.querySelector('img');
-        if (img) {
-            lightboxImg.src = img.src;
-            lightbox.classList.remove('hidden', 'opacity-0');
+            const children = container.children;
+            for (let i = 0; i < children.length; i++) {
+                const card = children[i];
+                if (!card.classList.contains('cert-grid-card')) continue;
+                const show = targetCategory === 'all' || card.dataset.certCat === targetCategory;
+                card.classList.toggle('is-hidden', !show);
+            }
         }
-    };
 
-    window.closeLightboxFunc = function() {
-        document.getElementById('lightbox').classList.add('hidden', 'opacity-0');
-    };
+        function filterSkills(targetCategory) {
+            const pills = document.querySelectorAll('#skills .pill-btn');
+            for (let i = 0; i < pills.length; i++) {
+                const btn = pills[i];
+                const attr = btn.getAttribute('onclick') || '';
+                btn.classList.toggle('active', attr.includes(`'${targetCategory}'`));
+            }
 
-    // --- 移动端菜单 ---
-    const hamburger = document.getElementById('hamburger');
-    const closeMenu = document.getElementById('close-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
+            const cards = document.querySelectorAll('.skill-node-card');
+            for (let i = 0; i < cards.length; i++) {
+                const card = cards[i];
+                const show = targetCategory === 'all' || card.dataset.skillCat === targetCategory;
+                card.classList.toggle('is-hidden', !show);
+            }
+        }
 
-    function toggleMenu(show) {
-        if (show) {
-            mobileMenu.classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
-            gsap.to(mobileMenu, { opacity: 1, duration: 0.3 });
-        } else {
-            document.body.classList.remove('overflow-hidden');
-            gsap.to(mobileMenu, { 
-                opacity: 0, 
-                duration: 0.3, 
-                onComplete: () => mobileMenu.classList.add('hidden') 
+        window.filterCertificates = filterCertificates;
+        window.filterSkills = filterSkills;
+
+        /* ============================================================
+           3. 燈箱
+           ============================================================ */
+        function initLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightboxImg');
+            const closeBtn = document.getElementById('closeLightbox');
+            if (!lightbox || !img) return;
+
+            let lastFocused = null;
+
+            function open(src, alt) {
+                lastFocused = document.activeElement;
+                img.src = src;
+                img.alt = alt || 'Certificate preview';
+                lightbox.classList.remove('hidden');
+                img.classList.remove('scale-95');
+                document.body.classList.add('overflow-hidden');
+                requestAnimationFrame(() => lightbox.classList.remove('opacity-0'));
+                if (closeBtn) closeBtn.focus();
+            }
+
+            function close() {
+                lightbox.classList.add('opacity-0');
+                img.classList.add('scale-95');
+                setTimeout(() => {
+                    lightbox.classList.add('hidden');
+                    img.src = '';
+                    document.body.classList.remove('overflow-hidden');
+                    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+                }, 250);
+            }
+
+            window.openLightbox = function (container) {
+                const target = container.querySelector('img');
+                if (target) open(target.src, target.alt);
+            };
+            window.closeLightboxFunc = close;
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    close();
+                });
+            }
+            img.addEventListener('click', (e) => {
+                e.stopPropagation();
+                close();
+            });
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) close();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) close();
             });
         }
-    }
 
-    hamburger.addEventListener('click', () => toggleMenu(true));
-    closeMenu.addEventListener('click', () => toggleMenu(false));
+        /* ============================================================
+           4. Nav 追蹤
+           ============================================================ */
+        function initNavTracker() {
+            const sections = document.querySelectorAll('section[id], header[id]');
+            const pills = document.querySelectorAll('.nav-links a');
+            let ticking = false;
 
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => toggleMenu(false));
-    });
-</script>
+            function update() {
+                const threshold = window.scrollY + 140;
+                let activeId = '';
+                sections.forEach(sec => {
+                    if (threshold >= sec.offsetTop && threshold < sec.offsetTop + sec.offsetHeight) {
+                        activeId = sec.id;
+                    }
+                });
+                pills.forEach(pill => {
+                    pill.classList.toggle('active', pill.getAttribute('href') === `#${activeId}`);
+                });
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(update);
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
+
+        /* ============================================================
+           5. 平滑滾動
+           ============================================================ */
+        function initSmoothScroll() {
+            const links = document.querySelectorAll('.nav-links a, .logo, .mobile-link');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (!href || !href.startsWith('#')) return;
+                    const target = document.querySelector(href);
+                    if (!target) return;
+                    e.preventDefault();
+                    gsap.to(window, {
+                        duration: prefersReducedMotion ? 0 : 1.0,
+                        scrollTo: { y: target, offsetY: href === '#contact-footer' ? 0 : 75 },
+                        ease: 'power4.inOut'
+                    });
+                });
+            });
+        }
+
+        /* ============================================================
+           6. Motion 動畫（用原生 IntersectionObserver + Motion animate）
+           ============================================================ */
+        function initScrollAnimations() {
+            if (prefersReducedMotion) return;
+
+            const Motion = window.Motion;
+            const hasMotion = Motion && typeof Motion.animate === 'function';
+
+            // 動畫參數（加快版）
+            const ENTER_DURATION = 0.55;
+            const LEAVE_DURATION = 0.28;
+            const ENTER_EASE = [0.22, 1.4, 0.36, 1];
+            const LEAVE_EASE = [0.5, 0, 0.75, 0];
+
+            function animateIn(el, dirX) {
+                if (hasMotion) {
+                    Motion.animate(
+                        el,
+                        {
+                            opacity: [0, 1],
+                            transform: [
+                                `translate(${dirX}px, 45px) scale(0.9)`,
+                                'translate(0px, 0px) scale(1)'
+                            ]
+                        },
+                        { duration: ENTER_DURATION, easing: ENTER_EASE }
+                    );
+                } else {
+                    el.style.transition = `opacity ${ENTER_DURATION}s ease-out, transform ${ENTER_DURATION}s ease-out`;
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                }
+            }
+
+            function animateOut(el, dirX) {
+                if (hasMotion) {
+                    Motion.animate(
+                        el,
+                        {
+                            opacity: [1, 0],
+                            transform: [
+                                'translate(0px, 0px) scale(1)',
+                                `translate(${dirX}px, 45px) scale(0.9)`
+                            ]
+                        },
+                        { duration: LEAVE_DURATION, easing: LEAVE_EASE }
+                    );
+                } else {
+                    el.style.transition = `opacity ${LEAVE_DURATION}s ease-in, transform ${LEAVE_DURATION}s ease-in`;
+                    el.style.opacity = '0';
+                    el.style.transform = `translate(${dirX}px, 45px) scale(0.9)`;
+                }
+            }
+
+            // ---- 卡片選擇器 ----
+            const cardSelectors = [
+                '#about .glass-card',
+                '#hobbies .tilt-card',
+                '#skills .skill-node-card',
+                '#experiences .timeline-node-item',
+                '#certificate .cert-grid-card',
+                '#projects article'
+            ];
+            const cards = document.querySelectorAll(cardSelectors.join(', '));
+
+            // 初始狀態：設定初始隱藏（用 class 避免 inline style 衝突）
+            cards.forEach((card, i) => {
+                const dirX = i % 2 === 0 ? -40 : 40;
+                card.style.opacity = '0';
+                card.style.transform = `translate(${dirX}px, 45px) scale(0.9)`;
+                card.dataset.dirX = dirX;
+            });
+
+            // Observer
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const el = entry.target;
+                    const dirX = parseFloat(el.dataset.dirX) || 0;
+                    if (entry.isIntersecting) {
+                        animateIn(el, dirX);
+                    } else {
+                        animateOut(el, dirX);
+                    }
+                });
+            }, {
+                threshold: 0.05,
+                rootMargin: '0px 0px -5% 0px'
+            });
+
+            cards.forEach(card => cardObserver.observe(card));
+
+            // ---- 標題逐字動畫 ----
+            const headings = document.querySelectorAll(
+                'section#about h2, section#hobbies h2, section#skills h2, ' +
+                'section#experiences h2, section#certificate h2, section#projects h2'
+            );
+
+            headings.forEach(heading => {
+                const walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT, null);
+                const textNodes = [];
+                let node;
+                while ((node = walker.nextNode())) {
+                    if (node.textContent.trim().length > 0) textNodes.push(node);
+                }
+                if (textNodes.length === 0) return;
+
+                textNodes.forEach(textNode => {
+                    const text = textNode.textContent;
+                    const frag = document.createDocumentFragment();
+                    text.split('').forEach(ch => {
+                        const span = document.createElement('span');
+                        span.className = 'char';
+                        span.textContent = ch === ' ' ? '\u00A0' : ch;
+                        span.style.opacity = '0';
+                        span.style.transform = 'translateY(20px) rotateX(-45deg)';
+                        frag.appendChild(span);
+                    });
+                    textNode.parentNode.replaceChild(frag, textNode);
+                });
+
+                const chars = heading.querySelectorAll('.char');
+
+                const headingObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            chars.forEach((c, i) => {
+                                if (hasMotion) {
+                                    Motion.animate(
+                                        c,
+                                        {
+                                            opacity: [0, 1],
+                                            transform: ['translateY(20px) rotateX(-45deg)', 'translateY(0px) rotateX(0deg)']
+                                        },
+                                        { duration: 0.4, delay: i * 0.018, easing: ENTER_EASE }
+                                    );
+                                } else {
+                                    c.style.transition = `opacity 0.4s ${i * 0.018}s ease-out, transform 0.4s ${i * 0.018}s ease-out`;
+                                    c.style.opacity = '1';
+                                    c.style.transform = 'none';
+                                }
+                            });
+                        } else {
+                            chars.forEach((c, i) => {
+                                if (hasMotion) {
+                                    Motion.animate(
+                                        c,
+                                        {
+                                            opacity: [1, 0],
+                                            transform: ['translateY(0px) rotateX(0deg)', 'translateY(20px) rotateX(-45deg)']
+                                        },
+                                        { duration: 0.22, delay: i * 0.008, easing: LEAVE_EASE }
+                                    );
+                                } else {
+                                    c.style.opacity = '0';
+                                    c.style.transform = 'translateY(20px) rotateX(-45deg)';
+                                }
+                            });
+                        }
+                    });
+                }, { threshold: 0.4 });
+
+                headingObserver.observe(heading);
+            });
+
+            // ---- 2.5 秒 fallback：強制顯示視窗內的卡片 ----
+            setTimeout(() => {
+                cards.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const vh = window.innerHeight;
+                    if (rect.top < vh && rect.bottom > 0) {
+                        if (getComputedStyle(el).opacity === '0') {
+                            el.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
+                            el.style.opacity = '1';
+                            el.style.transform = 'none';
+                        }
+                    }
+                });
+            }, 2500);
+        }
+
+        /* ============================================================
+           7. Hero + Preloader
+           ============================================================ */
+        function initHero() {
+            const typedText = document.getElementById('typed-text');
+            const fullText = "CYRUS.W_";
+            const preloader = document.getElementById('preloader');
+            const nav = document.getElementById('nav');
+            const portrait = document.getElementById('flyInPortrait');
+            const heroChildren = document.querySelectorAll('.hero .grid > div');
+
+            gsap.set(nav, { opacity: 0, y: -24 });
+            gsap.set(portrait, { x: '170%', opacity: 0, scale: 0.85 });
+            gsap.set(heroChildren, { opacity: 0, y: 35 });
+
+            const tl = gsap.timeline();
+
+            tl.to({ val: 0 }, {
+                val: fullText.length,
+                duration: 0.55,
+                onUpdate: function() {
+                    typedText.innerText = fullText.substring(0, Math.floor(this.targets()[0].val));
+                },
+                ease: 'none'
+            })
+            .to(preloader, {
+                opacity: 0, duration: 0.25, delay: 0.1,
+                onComplete: () => {
+                    preloader.style.display = 'none';
+                    document.body.classList.remove('overflow-hidden');
+                }
+            })
+            .to(nav, { opacity: 1, y: 0, duration: 0.5 }, '-=0.15')
+            .to(portrait, { x: '0%', opacity: 1, scale: 1, duration: 0.6 }, '-=0.3')
+            .to(heroChildren, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08 }, '-=0.4');
+        }
+
+        /* ============================================================
+           8. Mobile Menu
+           ============================================================ */
+        function initMobileMenu() {
+            const hamburger = document.getElementById('hamburger');
+            const closeBtn = document.getElementById('close-menu');
+            const menu = document.getElementById('mobile-menu');
+            if (!hamburger || !menu) return;
+
+            function open() {
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+                document.body.classList.add('overflow-hidden');
+                gsap.to(menu, { opacity: 1, duration: 0.25, ease: 'power2.out' });
+            }
+
+            function close() {
+                document.body.classList.remove('overflow-hidden');
+                gsap.to(menu, {
+                    opacity: 0, duration: 0.25, ease: 'power2.in',
+                    onComplete: () => {
+                        menu.classList.add('hidden');
+                        menu.classList.remove('flex');
+                    }
+                });
+            }
+
+            hamburger.addEventListener('click', open);
+            if (closeBtn) closeBtn.addEventListener('click', close);
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', close);
+            });
+        }
+
+        /* ============================================================
+           9. Particles
+           ============================================================ */
+        function initParticles() {
+            if (typeof tsParticles === 'undefined') return;
+            tsParticles.load("tsparticles", {
+                particles: {
+                    number: { value: 60 },
+                    color: { value: "#00F5A0" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.3 },
+                    size: { value: 2 },
+                    move: { enable: true, speed: 1, direction: "none", outModes: { default: "out" } },
+                    links: { enable: true, distance: 150, color: "#00F5A0", opacity: 0.15, width: 1 }
+                },
+                interactivity: { events: { onHover: { enable: true, mode: "grab" } } }
+            });
+        }
+
+        /* ============================================================
+           10. 3D Tilt
+           ============================================================ */
+        function initTilt() {
+            if (prefersReducedMotion || isTouch) return;
+            const cards = document.querySelectorAll('.tilt-card');
+
+            cards.forEach(card => {
+                let raf = null;
+                card.addEventListener('mousemove', (e) => {
+                    if (raf) return;
+                    raf = requestAnimationFrame(() => {
+                        const b = card.getBoundingClientRect();
+                        const axisX = (e.clientX - b.left) / b.width - 0.5;
+                        const axisY = (e.clientY - b.top) / b.height - 0.5;
+                        gsap.to(card, {
+                            rotateX: -axisY * 12, rotateY: axisX * 12,
+                            duration: 0.35, ease: 'power2.out',
+                            transformPerspective: 900, overwrite: 'auto'
+                        });
+                        raf = null;
+                    });
+                });
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        rotateX: 0, rotateY: 0, duration: 0.7,
+                        ease: 'elastic.out(1, 0.6)', overwrite: 'auto'
+                    });
+                });
+            });
+        }
+
+        /* ============================================================
+           11. Boot
+           ============================================================ */
+        function boot() {
+            document.body.classList.add('overflow-hidden');
+
+            sortCertificatesOnce();
+            initHero();
+            initParticles();
+            initSmoothScroll();
+            initNavTracker();
+            initTilt();
+            initLightbox();
+            initMobileMenu();
+            initScrollAnimations();
+
+            window.addEventListener('load', () => {
+                if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', boot);
+        } else {
+            boot();
+        }
+    })();
+    </script>
 </body>
 </html>
